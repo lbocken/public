@@ -1,1 +1,1 @@
-A R package to measure Wikipedia
+wikim : A R package to measure Wikipedia
