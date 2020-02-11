@@ -120,7 +120,7 @@ unionOfCategories(portalName1, portalName2)
 ### Metrics
 Metrics are from [koRpus](https://cran.r-project.org/web/packages/koRpus/index.html) and [quanteda](https://cran.r-project.org/web/packages/quanteda/index.html) packages
 
-#### Length
+#### Text Length
 ```r
 pageName <- "Mammal"
 articleLength.df <- MeasureArticleLength(pageName)
@@ -132,7 +132,7 @@ inverseConditionalLength.df <- MeasureInverseConditionalLength(pageName)
 
 ```
 
-#### LexicalDiversity
+#### Text Lexical Diversity
 ```r
 pageName <- "Mammal"
 articleLexicalDiversity.df <- MeasureArticleLexicalDiversity(pageName)
@@ -143,7 +143,7 @@ conditionalLexicalDiversity.df <- MeasureConditionalLexicalDiversity(pageName)
 inverseConditionalLexicalDiversity.df <- MeasureInverseConditionalLexicalDiversity(pageName)
 
 ```
-#### Readability
+#### Text Readability
 ```r
 pageName <- "Mammal"
 articleReadability.df <- MeasureArticleReadability(pageName)
@@ -153,20 +153,21 @@ complementaryReadability.df <- MeasureComplementaryReadability(pageName)
 conditionalReadability.df <- MeasureConditionalReadability(pageName)
 inverseConditionalReadability.df <- MeasureInverseConditionalReadability(pageName)
 ```
+#### Text similarity
+```r
+```
 
 #### Sentiment Analysis
 ```r
 ```
 
+
+
+## Cross References
 #### WordNet
 ```r
 
 ```
-
-#### Word clouds
-```r
-```
-
 
 #### Google Trends
 ```r
@@ -177,5 +178,12 @@ inverseConditionalReadability.df <- MeasureInverseConditionalReadability(pageNam
 ```
 
 #### Google Scholar
+```r
+```
+
+## Visualization
+
+
+#### Word clouds
 ```r
 ```
