@@ -1,4 +1,4 @@
-# wikim : An R package to measure Wikipedia
+# wikim : An R package to measure Wikipedia (work in progress, thanks for your patience)
 ## About
 
 An R package to measure Wikipedia, created by [Ludovic BOCKEN](https://www.linkedin.com/in/ludovicbocken/). Supported by 
