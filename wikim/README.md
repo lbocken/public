@@ -80,14 +80,14 @@ bodyText <- GetBodyArticleFromPageName(pageName)
 ```r
 categoryName <- "Mammals"
 categoryMetaData.df <- GetCategoryMetaData(categoryName)
-View(categoryMetaData.df)
 categoriesMembersOfCategory.df <- GetCategoriesMembersOfCategory(categoryName)
-View(categoriesMembersOfCategory.df)
 pagesMembersOfCategory.df <- GetPagesMembersOfCategory(categoryName)
-View(pagesMembersOfCategory.df)
 portalsMembersOfCategory.df <- GetPortalsMemberOfCategory(categoryName)
-View(portalsMembersOfCategory.df)
 
+View(categoryMetaData.df)
+View(categoriesMembersOfCategory.df)
+View(pagesMembersOfCategory.df)
+View(portalsMembersOfCategory.df)
 ```
 ### Portals
 ```r
