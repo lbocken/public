@@ -10,6 +10,10 @@ The package communicate with the [API of MediaWiki](https://www.mediawiki.org/wi
 The latest development version:
 
 ``` r
-# devtools package required to install quanteda from Github 
-devtools::install_github("lbocken/wikim") 
+install.packages("glue")
+library("glue")
+install.packages("devtools", repos="http://cloud.r-project.org")
+library(devtools)
+install_github("lbocken/public/wikim")
+library(wikim)
 ```
