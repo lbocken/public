@@ -314,6 +314,14 @@ These functions use the packages
 
 ## Visualization
 
+#### Histograms
+```r
+pageName <- "Mammal"
+PrintHistogramOfTheMostFrequentTokens(pageName)
+PrintHistogramOfTheMostFrequentNounPhrases(pageName)
+PrintHistogramOfTheMostFrequentWikipediaReferences(pageName)
+
+```
 
 #### Word clouds
 These functions use the packages
@@ -323,14 +331,24 @@ These functions use the packages
 .
 ```r
 pageName <- "Mammal"
-PrintWordCloud(pageName)
+categoryName <- "Mammals"
+portalName <- "Mammals"
+
+PrintWordCloudOfIntroduction(pageName)
+PrintWordCloudOfArticle(pageName)
+PrintWordCloudOfBodyArticle(pageName)
+PrintWordCloudOfCategory(categoryName)
+PrintWordCloudOfPortal(portalName)
 
 ```
 
 #### Bayesian networks
 These functions use the packages
-[](),
-[]().
+[bnlearn](https://cran.r-project.org/web/packages/bnlearn/index.html),
+[networkD3](https://cran.r-project.org/web/packages/networkD3/index.html),
+[bnclassify](https://cran.r-project.org/web/packages/bnclassify/index.html),
+[bnstuct](https://cran.r-project.org/web/packages/bnstruct/index.html).
+
 
 ```r
 pageName <- "Mammal"
@@ -341,6 +359,19 @@ bayesianNetworksFromArticles <- ExtractBayesianNetworksFromArticle(pageName)
 bayesianNetworksFromCategory <- ExtractBayesianNetworksFromArticle(categoryName)
 bayesianNetworksFromPortal <- ExtractBayesianNetworksFromArticle(portalName)
 
+
+```
+
+#### Conditional Random Fields
+These functions use the packages 
+[CRF](https://cran.r-project.org/web/packages/CRF/index.html),
+[crfsuite](https://cran.r-project.org/web/packages/crfsuite/index.html).
+
+```r
+pageName <- "Mammal"
+crfFromArticle <- ExtractCRFfromArticle(pageName)
+crfFromCategory <- ExtractCRFfromPortal(pageName)
+crfFromPortal <- ExtractCRFfromCategory(pageName)
 
 ```
 
