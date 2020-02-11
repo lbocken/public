@@ -451,17 +451,29 @@ pageName <- "Mammal"
 ```
 
 
-# Abridged functions
-Length of introduction : loi(pageName)
-Length of article : loa(pageName)
-Length of body article : lob(pageName)
+# Abridged functions and comparisons
+```r
+# Length of introduction 
+loi(pageName)
+# Length of article 
+loa(pageName)
+#  Length of body article 
+lob(pageName)
 
-Readability of introduction : roi(pageName)
-Readability of article : roa(pageName)
-Readability of body article : rob(pageName)
+# Readability of introduction
+roi(pageName)
+# Readability of article 
+roa(pageName)
+# Readability of body article 
+rob(pageName)
 
-Lexical Diversity of introduction : voi(pageName)
-Lexical Diversity of article : voa(pageName)
-Lexical Diversity of body article : vob(pageName)
+# Lexical Diversity of introduction
+voi(pageName)
+# Lexical Diversity of article
+voa(pageName)
+# Lexical Diversity of body article
+vob(pageName)
+```
+
 
 
