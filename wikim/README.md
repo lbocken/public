@@ -130,7 +130,7 @@ topicModelFromPortal <- GetTopicModelsFromArticle(portalName)
 
 ### Entity and noun phrase recognition
 These functions use the packages 
-[phrasemachine](https://cran.r-project.org/web/packages/phrasemachine/index.html)
+[phrasemachine](https://cran.r-project.org/web/packages/phrasemachine/index.html),
 [spacyr](https://cran.r-project.org/web/packages/spacyr/index.html).
 ```r
 pageName <- "Mammal"
@@ -145,6 +145,22 @@ nounPhrasesInArticle.df <- ExtractNounPhrasesInPortal(portalName)
 
 ### Metrics functions
 Metrics are from [koRpus](https://cran.r-project.org/web/packages/koRpus/index.html) and [quanteda](https://cran.r-project.org/web/packages/quanteda/index.html) packages
+
+#### Frequency Analysis
+```r
+pageName <- "Mammal"
+categoryName <- "Mammals"
+portalName <- "Mammals"
+
+frequencyOfTokensInArticle <- MeasureFrequencyOfTokensInArticle(pageName)
+frequencyOfTokensInCategory <- MeasureFrequencyOfTokensInCategory(categoryName)
+frequencyOfTokensInPortal <- MeasureFrequencyOfTokensInPortal(portalName)
+
+frequencyOfNounPhrasesInArticle <- MeasureFrequencyOfNounPhrasesInArticle(pageName)
+frequencyOfNounPhrasesInCategory <- MeasureFrequencyOfNounPhrasesInCategory(categoryName)
+frequencyOfNounPhrasesInPortal <- MeasureFrequencyOfNounPhrasesInPortal(portalName)
+
+```
 
 #### Text Length
 ```r
@@ -193,6 +209,38 @@ textSimilarityBetweenArticlesMembersOfPortal.df <- MeasureTextSimilarityBetweenA
 textSimilarityBetweenArticlesReferedInArticle.df <- MeasureTextSimilarityBetweenArticlesReferedInArticle(pageName)
 
 ```
+
+#### Clustering
+These functions use the package
+[fastcluster](https://cran.r-project.org/web/packages/fastcluster/index.html).
+
+```r
+categoryName <- "Mammals"
+portalName <- "Mammals"
+
+readabilityClustersOfArticlesMembersOfCategory <- GetReadabilityClustersOfArticlesMembersOfCategory(categoryName)
+readabilityClustersOfArticlesMembersOfportalName <- GetReadabilityClustersOfArticlesMembersOfCategory(portalName)
+
+PrintHiearchicalClustersOfArticlesMembersOfCategory(categoryName)
+PrintHiearchicalClustersOfArticlesMembersOfPortal(portalName)
+
+```
+
+#### Grammars
+These functions use the package [gramEvol](https://cran.r-project.org/web/packages/gramEvol/index.html).
+```r
+pageName <- "Mammal"
+grammarFromArticle <- BuildGrammarFromArticle(pageName)
+grammarFromCategory <- BuildGrammarFromCategory(categoryName)
+grammarFromPortal <- BuildGrammarFromPortal(portalName)
+
+```
+
+#### Strings
+These functions use the packages 
+[stringr](https://cran.r-project.org/web/packages/stringr/index.html),
+[stringi](https://cran.r-project.org/web/packages/stringi/index.html),
+[GrpString](https://cran.r-project.org/web/packages/GrpString/index.html).
 
 #### Sentiment Analysis
 These functions use the packages 
