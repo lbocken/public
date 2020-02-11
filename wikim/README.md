@@ -35,6 +35,10 @@ The package communicate with the [API of MediaWiki](https://www.mediawiki.org/wi
 [qdap](https://cran.r-project.org/web/packages/qdap/index.html),
 ...
 
+## Motivations
+Wikipedia is a precious resource.
+Semantic analysis need clear functions.
+Functions are defined on names as arguments : portal name, category name, page name.
 
 ## Keywords
 
