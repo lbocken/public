@@ -104,10 +104,19 @@ referencesToCategories.df <- ExtractReferencesToCategories(pageName)
 referencesToArticles.df <- ExtractReferencesToArticles(pageName)
 ```
 
-### Basic operations on sets
+### Basic operations and measures on sets
 ```r
 categoryName1 <- "Mammals"
 categoryName2 <- "Marsupials"
+
+portalCardinalityOInCategory <- MeasurePortalCardinalityInCategory(categoryName)
+categoryCardinalityOInCategory <- MeasureCategoryCardinalityInCategory(categoryName)
+articleCardinalityOInCategory <- MeasureArticleCardinalityInCategory(categoryName)
+
+portalCardinalityOInPortal <- MeasurePortalCardinalityInPortal(categoryName)
+categoryCardinalityOInPortal <- MeasureCategoryCardinalityInPortal(categoryName)
+articleCardinalityOInPortal <- MeasureArticleCardinalityInPortal(categoryName)
+
 intersectionOfCategories(categoryName1, categoryName2)
 unionOfCategories(categoryName1, categoryName2)
 
@@ -317,3 +326,21 @@ pageName <- "Mammal"
 PrintWordCloud(pageName)
 
 ```
+
+#### Bayesian networks
+These functions use the packages
+[](),
+[]().
+
+```r
+pageName <- "Mammal"
+categoryName <- "Mammals"
+portalName <- "Mammals"
+
+bayesianNetworksFromArticles <- ExtractBayesianNetworksFromArticle(pageName)
+bayesianNetworksFromCategory <- ExtractBayesianNetworksFromArticle(categoryName)
+bayesianNetworksFromPortal <- ExtractBayesianNetworksFromArticle(portalName)
+
+
+```
+
