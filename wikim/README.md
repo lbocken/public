@@ -65,4 +65,13 @@ Compound variable names and compound function names are CamelCase.
 
 
 
+## A quick start with a few examples
 
+### Categories
+```r
+library(wikim)
+categoryName <- "Mammals"
+
+
+
+```
