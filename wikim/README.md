@@ -6,9 +6,9 @@ a doctoral scholarship of [Fonds de recherche du Québec – Société et cultur
 The package communicate with the [API of MediaWiki](https://www.mediawiki.org/wiki/API:Main_page) and depends on several other packages : [koRpus](https://cran.r-project.org/web/packages/koRpus/index.html), [quanteda](https://cran.r-project.org/web/packages/quanteda/index.html), ...
 
 
-## Keywords :
+## Keywords
 
-Wikipedia ; text similarity ; graph ; sentiment analysis ; readability ; lexical diversity ; metrics ; ontology ; bayesian network
+Wikipedia ; metrics ; text similarity ; graph ; sentiment analysis ; readability ; lexical diversity ;  ontology ; bayesian network
 
 ## How to Install
 
