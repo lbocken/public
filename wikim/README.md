@@ -82,7 +82,7 @@ categoryName <- "Mammals"
 categoryMetaData.df <- GetCategoryMetaData(categoryName)
 categoriesMembersOfCategory.df <- GetCategoriesMembersOfCategory(categoryName)
 pagesMembersOfCategory.df <- GetPagesMembersOfCategory(categoryName)
-portalsMembersOfCategory.df <- GetPortalsMemberOfCategory(categoryName)
+portalsMembersOfCategory.df <- GetPortalsMembersOfCategory(categoryName)
 
 View(categoryMetaData.df)
 View(categoriesMembersOfCategory.df)
@@ -92,5 +92,41 @@ View(portalsMembersOfCategory.df)
 ### Portals
 ```r
 portalName <- "Mammals"
+portal <- GetPortal(portalName)
+
+```
+### Length
+```r
+pageName <- "Mammal"
+articleLength <- MeasureArticleLength(pageName)
+introductionLength <- MeasureIntroductionLength(pageName)
+bodyArticleLength <- MeasureBodyArticleLength(pageName)
+complementaryLength <- MeasureComplementaryLength(pageName)
+conditionalLength <- MeasureConditionalLength(pageName)
+inverseConditionalLength <- MeasureInverseConditionalLength(pageName)
+
+```
+
+### LexicalDiversity
+```r
+pageName <- "Mammal"
+articleLexicalDiversity <- MeasureArticleLexicalDiversity(pageName)
+introductionLexicalDiversity <- MeasureIntroductionLexicalDiversity(pageName)
+bodyArticleLexicalDiversity <- MeasureBodyArticleLexicalDiversity(pageName)
+complementaryLexicalDiversity <- MeasureComplementaryLexicalDiversity(pageName)
+conditionalLexicalDiversity <- MeasureConditionalLexicalDiversity(pageName)
+inverseConditionalLexicalDiversity <- MeasureInverseConditionalLexicalDiversity(pageName)
+
+```
+
+### Readability
+```r
+pageName <- "Mammal"
+articleReadability <- MeasureArticleReadability(pageName)
+introductionReadability <- MeasureIntroductionReadability(pageName)
+bodyArticleReadability <- MeasureBodyArticleReadability(pageName)
+complementaryReadability <- MeasureComplementaryReadability(pageName)
+conditionalReadability <- MeasureConditionalReadability(pageName)
+inverseConditionalReadability <- MeasureInverseConditionalReadability(pageName)
 
 ```
