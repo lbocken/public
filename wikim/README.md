@@ -140,6 +140,24 @@ These functions use the packages
 []().
 
 ```r
+pageName <- "Mammal"
+portalName <- "Mammals"
+categoryName <- "Mammals"
+
+stemsInArticle <- ExtractStemsInArticle(pageName)
+stemsInPortal <- ExtractStemsInPortal(portalName)
+stemsInCategory <- ExtractStemsInCategory(categoryName)
+
+```
+
+### Parts-Of-Speech Tagging
+```r
+pageName <- "Mammal"
+partOfSpeechOfArticle <- ExtractPartsOfSpeechOfArticle(pageName)
+partOfSpeechOfPortal <- ExtractPartsOfSpeechOfArticle(portalName)
+partOfSpeechOfCategory <- ExtractPartsOfSpeechOfArticle(categoryName)
+
+
 ```
 
 ### Key Phrase Extraction
@@ -153,6 +171,10 @@ keyPhrasesFromArticles <- ExtractKeyPhrasesFromArticle(pageName)
 
 
 ### Topic modeling
+These functions use the package
+[topicmodels](https://cran.r-project.org/web/packages/topicmodels/index.html),
+[maptpx](https://cran.r-project.org/web/packages/maptpx/index.html).
+
 ```r
 pageName <- "Mammal"
 categoryName <- "Mammals"
