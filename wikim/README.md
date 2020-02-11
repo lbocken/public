@@ -155,10 +155,22 @@ inverseConditionalReadability.df <- MeasureInverseConditionalReadability(pageNam
 ```
 #### Text similarity
 ```r
+categoryName <- "Mammals"
+portalName <- "Mammals"
+pageName <- "Mammal"
+textSimilarityBetweenArticlesMembersOfCategory.df <- MeasureTextSimilarityBetweenArticlesMembersOfCategory(categoryName)
+textSimilarityBetweenArticlesMembersOfPortal.df <- MeasureTextSimilarityBetweenArticlesMembersOfPortal(portalName)
+textSimilarityBetweenArticlesReferedInArticle.df <- MeasureTextSimilarityBetweenArticlesReferedInArticle(pageName)
+
 ```
 
 #### Sentiment Analysis
 ```r
+pageName1 <- "Yeomanry_Cavalry"
+pageName2 <- "Bat"
+sentimentAnalysisOfArticle1.df <- MeasureSentimentAnalysisOfArticle(pageName1)
+sentimentAnalysisOfArticle2.df <- MeasureSentimentAnalysisOfArticle(pageName2)
+
 ```
 
 
@@ -166,10 +178,20 @@ inverseConditionalReadability.df <- MeasureInverseConditionalReadability(pageNam
 ## Cross References
 #### WordNet
 ```r
+portalName <- "Mammals"
+categoryName <- "Mammal"
+pageName <- "Mammal"
+
+resourcesOfWordNetForPortal.df <- ExtractWordNet(portalName)
+resourcesOfWordNetForCategory.df <- ExtractWordNet(categoryName)
+resourcesOfWordNetForArticle.df <- ExtractWordNet(pageName)
 
 ```
 
 #### Google Trends
+These functions use the packages 
+[gtrendsR](https://cran.r-project.org/web/packages/gtrendsR/index.html) and
+[trendyy](https://cran.r-project.org/web/packages/trendyy/trendyy.pdf)
 ```r
 ```
 
