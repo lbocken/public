@@ -37,9 +37,8 @@ The package communicate with the [API of MediaWiki](https://www.mediawiki.org/wi
 ...
 
 ## Motivations
-Wikipedia is a precious resource.
-Semantic analysis need clear functions.
-Functions are defined on names as arguments : portal name, category name, page name.
+Since its creation in 2001, Wikipedia became a precious encyclopedic, ontological and textual resource. Wikipedia can be measured especially from set of texts, links between these texts, historical data, cross data. To make easier the improvement of its quality, it is useful to formalize nested strategies on basic functions. Then, knowledge-based reasoning can thus be automated. In this software library, wikim, several access are privileged by names: page names, category names, portal names. In this way, a certain semantic is preserved to build compound expressions. Other software libraries are connected to evaluate Wikipedia on other cross data. In this way, several inherited types of metrics are used and applied to cases of Wikipedia: readability metrics, lexical diversity metrics, set metrics, graphs metrics, sentiment analysis metrics, etc. Abridged functions allow you to write complex expressions in condensed form.
+
 
 ## Keywords
 
