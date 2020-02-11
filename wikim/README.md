@@ -96,7 +96,7 @@ portalName <- "Mammals"
 portal <- GetPortal(portalName)
 
 ```
-### Extraction
+### Extraction functions
 ```r
 pageName <- "Mammal"
 referencesToPortals.df <- ExtractReferencesToPortals(pageName)
@@ -117,7 +117,20 @@ intersectionOfCategories(portalName1, portalName2)
 unionOfCategories(portalName1, portalName2)
 ```
 
-### Metrics
+### Topic modeling
+```r
+pageName <- "Mammal"
+categoryName <- "Mammals"
+portalName <- "Mammals"
+
+topicModelFromArticle <- GetTopicModelsFromArticle(pageName)
+topicModelFromCategory <- GetTopicModelsFromArticle(categoryName)
+topicModelFromPortal <- GetTopicModelsFromArticle(portalName)
+
+
+```
+
+### Metrics functions
 Metrics are from [koRpus](https://cran.r-project.org/web/packages/koRpus/index.html) and [quanteda](https://cran.r-project.org/web/packages/quanteda/index.html) packages
 
 #### Text Length
