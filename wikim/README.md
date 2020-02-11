@@ -68,7 +68,8 @@ Compound variable names and compound function names are CamelCase.
 
 ## A quick start with a few examples
 
-### Articles
+### Acquisition functions
+#### Articles
 ```r
 pageName <- "Mammal"
 article <- GetArticleFromPageName(pageName)
@@ -76,7 +77,7 @@ introduction <- GetIntroductionFromPageName(pageName)
 bodyText <- GetBodyArticleFromPageName(pageName)
 ```
 
-### Categories
+#### Categories
 ```r
 categoryName <- "Mammals"
 categoryMetaData.df <- GetCategoryMetaData(categoryName)
@@ -89,13 +90,16 @@ View(categoriesMembersOfCategory.df)
 View(pagesMembersOfCategory.df)
 View(portalsMembersOfCategory.df)
 ```
-### Portals
+#### Portals
 ```r
 portalName <- "Mammals"
 portal <- GetPortal(portalName)
 
 ```
-### Length
+
+### Metrics
+Metrics are from [koRpus](https://cran.r-project.org/web/packages/koRpus/index.html) and [quanteda](https://cran.r-project.org/web/packages/quanteda/index.html) packages
+#### Length
 ```r
 pageName <- "Mammal"
 articleLength <- MeasureArticleLength(pageName)
@@ -107,7 +111,7 @@ inverseConditionalLength <- MeasureInverseConditionalLength(pageName)
 
 ```
 
-### LexicalDiversity
+#### LexicalDiversity
 ```r
 pageName <- "Mammal"
 articleLexicalDiversity <- MeasureArticleLexicalDiversity(pageName)
@@ -118,7 +122,6 @@ conditionalLexicalDiversity <- MeasureConditionalLexicalDiversity(pageName)
 inverseConditionalLexicalDiversity <- MeasureInverseConditionalLexicalDiversity(pageName)
 
 ```
-### Metrics
 #### Readability
 ```r
 pageName <- "Mammal"
