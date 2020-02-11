@@ -71,7 +71,13 @@ Compound variable names and compound function names are CamelCase.
 ```r
 library(wikim)
 categoryName <- "Mammals"
-
-
+categoryMetaData.df <- GetCategoryMetaData(categoryName)
+View(categoryMetaData.df)
+categoriesMembersOfCategory.df <- GetCategoriesMembersOfCategory(categoryName)
+View(categoriesMembersOfCategory.df)
+pagesMembersOfCategory.df <- GetPagesMembersOfCategory(categoryName)
+View(pagesMembersOfCategory.df)
+portalsMembersOfCategory.df <- GetPortalsMemberOfCategory(categoryName)
+View(portalsMembersOfCategory.df)
 
 ```
