@@ -453,26 +453,38 @@ pageName <- "Mammal"
 
 # Abridged functions and comparisons
 ```r
+pageName1 <- "dog"
+pageName2 <- "mammal"
+
 # Length of introduction 
-loi(pageName)
+loi(pageName1) < loi(pageName2)
+
 # Length of article 
-loa(pageName)
+loa(pageName1) < loa(pageName2)
+
 #  Length of body article 
-lob(pageName)
+lob(pageName1) < lob(pageName2)
+
 
 # Readability of introduction
-roi(pageName)
+roi(pageName1) < roi(pageName2)
+
 # Readability of article 
-roa(pageName)
+roa(pageName1) < roa(pageName2)
+
 # Readability of body article 
-rob(pageName)
+rob(pageName1) < rob(pageName2)
+
 
 # Lexical Diversity of introduction
-voi(pageName)
+voi(pageName1) < voi(pageName2)
+
 # Lexical Diversity of article
-voa(pageName)
+voa(pageName1) < voa(pageName2)
+
 # Lexical Diversity of body article
-vob(pageName)
+vob(pageName1) < vob(pageName2)
+
 ```
 
 
