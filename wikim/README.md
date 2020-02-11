@@ -210,10 +210,18 @@ topics
 ```
 
 #### Microsoft Academics
+These functions use the package
+[microdemic](https://cran.r-project.org/web/packages/microdemic/index.html) and the [Microsoft Academic API](https://www.microsoft.com/en-us/research/project/academic-knowledge/).
+
 ```r
 ```
 
 #### Google Scholar
+These functions use the packages
+[scholar](https://cran.r-project.org/web/packages/scholar/index.html),
+[gcite](https://cran.r-project.org/web/packages/gcite/index.html)
+.
+
 ```r
 ```
 
@@ -221,5 +229,10 @@ topics
 
 
 #### Word clouds
+These functions use the packages
+[wordcloud](https://cran.r-project.org/web/packages/wordcloud/index.html),
+[wordcloud2](https://cran.r-project.org/web/packages/wordcloud/index.html),
+[ggwordcloud](https://cran.r-project.org/web/packages/ggwordcloud/index.html)
+.
 ```r
 ```
