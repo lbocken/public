@@ -235,4 +235,7 @@ These functions use the packages
 [ggwordcloud](https://cran.r-project.org/web/packages/ggwordcloud/index.html)
 .
 ```r
+pageName <- "Mammal"
+PrintWordCloud(pageName)
+
 ```
