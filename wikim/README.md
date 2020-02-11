@@ -165,6 +165,13 @@ textSimilarityBetweenArticlesReferedInArticle.df <- MeasureTextSimilarityBetween
 ```
 
 #### Sentiment Analysis
+These functions use the packages 
+[SentimentAnalysis](https://cran.r-project.org/web/packages/SentimentAnalysis/index.html), 
+[politeness](https://cran.r-project.org/web/packages/politeness/index.html),
+[sentimentr](https://cran.r-project.org/web/packages/sentimentr/sentimentr.pdf),
+[meanr](https://cran.r-project.org/web/packages/meanr/index.html),
+[RSentiment](https://cran.r-project.org/web/packages/RSentiment/RSentiment.pdf)
+
 ```r
 pageName1 <- "Yeomanry_Cavalry"
 pageName2 <- "Bat"
@@ -177,6 +184,8 @@ sentimentAnalysisOfArticle2.df <- MeasureSentimentAnalysisOfArticle(pageName2)
 
 ## Cross References
 #### WordNet
+These functions use the package [wordnet](https://cran.r-project.org/web/packages/wordnet/index.html) for the Lexical database [WordNet](https://wordnet.princeton.edu/)
+
 ```r
 portalName <- "Mammals"
 categoryName <- "Mammal"
@@ -193,6 +202,11 @@ These functions use the packages
 [gtrendsR](https://cran.r-project.org/web/packages/gtrendsR/index.html) and
 [trendyy](https://cran.r-project.org/web/packages/trendyy/trendyy.pdf)
 ```r
+categories
+countries
+cities
+regions
+topics
 ```
 
 #### Microsoft Academics
