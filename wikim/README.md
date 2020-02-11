@@ -118,8 +118,8 @@ conditionalLexicalDiversity <- MeasureConditionalLexicalDiversity(pageName)
 inverseConditionalLexicalDiversity <- MeasureInverseConditionalLexicalDiversity(pageName)
 
 ```
-
-### Readability
+### Metrics
+#### Readability
 ```r
 pageName <- "Mammal"
 articleReadability <- MeasureArticleReadability(pageName)
