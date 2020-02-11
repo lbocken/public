@@ -32,6 +32,7 @@ The package communicate with the [API of MediaWiki](https://www.mediawiki.org/wi
 [text2vec](https://cran.r-project.org/web/packages/text2vec/index.html),
 [corpora](https://cran.r-project.org/web/packages/corpora/index.html),
 [gutenbergr](https://cran.r-project.org/web/packages/gutenbergr/index.html),
+[qdap](https://cran.r-project.org/web/packages/qdap/index.html),
 ...
 
 
@@ -51,3 +52,12 @@ library(devtools)
 install_github("lbocken/public/wikim")
 library(wikim)
 ```
+
+## Coding Style
+Variable names are lowercase.
+Function names begin with verbs and uppercase.
+Compound variable names and compound function names are CamelCase.
+
+
+
+
