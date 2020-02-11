@@ -1,4 +1,5 @@
-# wikim : An R package to measure Wikipedia (work in progress, thanks for your patience)
+# wikim : An R package to measure Wikipedia
+(work in progress, thanks for your patience)
 ## About
 
 An R package to measure Wikipedia, created by [Ludovic BOCKEN](https://www.linkedin.com/in/ludovicbocken/). Supported by 
@@ -69,7 +70,10 @@ Compound variable names and compound function names are CamelCase.
 
 ### Articles
 ```r
-
+pageName <- "Mammal"
+article <- GetArticleFromPageName(pageName)
+introduction <- GetIntroductionFromPageName(pageName)
+bodyText <- GetBodyArticleFromPageName(pageName)
 ```
 
 ### Categories
@@ -87,5 +91,6 @@ View(portalsMembersOfCategory.df)
 ```
 ### Portals
 ```r
+portalName <- "Mammals"
 
 ```
