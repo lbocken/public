@@ -1,4 +1,4 @@
-GetPage <- function(pageName){
+GetPageFromPageName <- function(pageName){
   pageid <- GetPageID(pageName)
 library(httr)
 library(xml2)
