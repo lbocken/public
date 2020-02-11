@@ -126,6 +126,32 @@ intersectionOfCategories(portalName1, portalName2)
 unionOfCategories(portalName1, portalName2)
 ```
 
+### Tokenization 
+These functions use the packages
+[](),
+[]().
+
+```r
+```
+
+### Stemming
+These functions use the packages
+[](),
+[]().
+
+```r
+```
+
+### Key Phrase Extraction
+These functions use the package
+[RKEA](https://cran.r-project.org/web/packages/RKEA/index.html).
+
+```r
+pageName <- "Mammal"
+keyPhrasesFromArticles <- ExtractKeyPhrasesFromArticle(pageName)
+```
+
+
 ### Topic modeling
 ```r
 pageName <- "Mammal"
@@ -219,7 +245,21 @@ textSimilarityBetweenArticlesReferedInArticle.df <- MeasureTextSimilarityBetween
 
 ```
 
-#### Clustering
+### Text categorization
+These functions use the package 
+[textcat](https://cran.r-project.org/web/packages/textcat/index.html).
+
+```r
+categoryName <- "Mammals"
+portalName <- "Mammals"
+categoriesOfArticles <- CategorizeArticlesMembersOfCategory(categoryName)
+categoriesOfArticles <- CategorizeArticlesMembersOfPortal(portalName)
+```
+
+
+
+
+### Clustering
 These functions use the package
 [fastcluster](https://cran.r-project.org/web/packages/fastcluster/index.html).
 
@@ -375,3 +415,15 @@ crfFromPortal <- ExtractCRFfromCategory(pageName)
 
 ```
 
+### Time Series Analysis
+
+```r
+pageName <- "Mammal"
+evolutionOfArticle <- MeasureEvolutionOfArticle(pageName)
+```
+
+
+### Correspondence Analysis
+```r
+pageName <- "Mammal"
+```
