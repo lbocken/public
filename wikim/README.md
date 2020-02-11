@@ -97,39 +97,53 @@ portal <- GetPortal(portalName)
 
 ```
 
+### Operations
+```r
+categoryName1 <- "Mammals"
+categoryName2 <- "Marsupials"
+intersectionOfCategories(categoryName1, categoryName2)
+unionOfCategories(categoryName1, categoryName2)
+
+portalName1 <- "Mammals"
+portalName2 <- "Dogs"
+intersectionOfCategories(portalName1, portalName2)
+unionOfCategories(portalName1, portalName2)
+```
+
 ### Metrics
 Metrics are from [koRpus](https://cran.r-project.org/web/packages/koRpus/index.html) and [quanteda](https://cran.r-project.org/web/packages/quanteda/index.html) packages
+
 #### Length
 ```r
 pageName <- "Mammal"
-articleLength <- MeasureArticleLength(pageName)
-introductionLength <- MeasureIntroductionLength(pageName)
-bodyArticleLength <- MeasureBodyArticleLength(pageName)
-complementaryLength <- MeasureComplementaryLength(pageName)
-conditionalLength <- MeasureConditionalLength(pageName)
-inverseConditionalLength <- MeasureInverseConditionalLength(pageName)
+articleLength.df <- MeasureArticleLength(pageName)
+introductionLength.df <- MeasureIntroductionLength(pageName)
+bodyArticleLength.df <- MeasureBodyArticleLength(pageName)
+complementaryLength.df <- MeasureComplementaryLength(pageName)
+conditionalLength.df <- MeasureConditionalLength(pageName)
+inverseConditionalLength.df <- MeasureInverseConditionalLength(pageName)
 
 ```
 
 #### LexicalDiversity
 ```r
 pageName <- "Mammal"
-articleLexicalDiversity <- MeasureArticleLexicalDiversity(pageName)
-introductionLexicalDiversity <- MeasureIntroductionLexicalDiversity(pageName)
-bodyArticleLexicalDiversity <- MeasureBodyArticleLexicalDiversity(pageName)
-complementaryLexicalDiversity <- MeasureComplementaryLexicalDiversity(pageName)
-conditionalLexicalDiversity <- MeasureConditionalLexicalDiversity(pageName)
-inverseConditionalLexicalDiversity <- MeasureInverseConditionalLexicalDiversity(pageName)
+articleLexicalDiversity.df <- MeasureArticleLexicalDiversity(pageName)
+introductionLexicalDiversity.df <- MeasureIntroductionLexicalDiversity(pageName)
+bodyArticleLexicalDiversity.df <- MeasureBodyArticleLexicalDiversity(pageName)
+complementaryLexicalDiversity.df <- MeasureComplementaryLexicalDiversity(pageName)
+conditionalLexicalDiversity.df <- MeasureConditionalLexicalDiversity(pageName)
+inverseConditionalLexicalDiversity.df <- MeasureInverseConditionalLexicalDiversity(pageName)
 
 ```
 #### Readability
 ```r
 pageName <- "Mammal"
-articleReadability <- MeasureArticleReadability(pageName)
-introductionReadability <- MeasureIntroductionReadability(pageName)
-bodyArticleReadability <- MeasureBodyArticleReadability(pageName)
-complementaryReadability <- MeasureComplementaryReadability(pageName)
-conditionalReadability <- MeasureConditionalReadability(pageName)
-inverseConditionalReadability <- MeasureInverseConditionalReadability(pageName)
+articleReadability.df <- MeasureArticleReadability(pageName)
+introductionReadability.df <- MeasureIntroductionReadability(pageName)
+bodyArticleReadability.df <- MeasureBodyArticleReadability(pageName)
+complementaryReadability.df <- MeasureComplementaryReadability(pageName)
+conditionalReadability.df <- MeasureConditionalReadability(pageName)
+inverseConditionalReadability.df <- MeasureInverseConditionalReadability(pageName)
 
 ```
