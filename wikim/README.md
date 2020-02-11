@@ -96,8 +96,15 @@ portalName <- "Mammals"
 portal <- GetPortal(portalName)
 
 ```
+### Extraction
+```r
+pageName <- "Mammal"
+referencesToPortals.df <- ExtractReferencesToPortals(pageName)
+referencesToCategories.df <- ExtractReferencesToCategories(pageName)
+referencesToArticles.df <- ExtractReferencesToArticles(pageName)
+```
 
-### Operations
+### Basic operations on sets
 ```r
 categoryName1 <- "Mammals"
 categoryName2 <- "Marsupials"
@@ -145,5 +152,30 @@ bodyArticleReadability.df <- MeasureBodyArticleReadability(pageName)
 complementaryReadability.df <- MeasureComplementaryReadability(pageName)
 conditionalReadability.df <- MeasureConditionalReadability(pageName)
 inverseConditionalReadability.df <- MeasureInverseConditionalReadability(pageName)
+```
 
+#### Sentiment Analysis
+```r
+```
+
+#### WordNet
+```r
+
+```
+
+#### Word clouds
+```r
+```
+
+
+#### Google Trends
+```r
+```
+
+#### Microsoft Academics
+```r
+```
+
+#### Google Scholar
+```r
 ```
