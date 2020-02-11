@@ -126,9 +126,22 @@ portalName <- "Mammals"
 topicModelFromArticle <- GetTopicModelsFromArticle(pageName)
 topicModelFromCategory <- GetTopicModelsFromArticle(categoryName)
 topicModelFromPortal <- GetTopicModelsFromArticle(portalName)
-
-
 ```
+
+### Entity and noun phrase recognition
+These functions use the packages 
+[phrasemachine](https://cran.r-project.org/web/packages/phrasemachine/index.html)
+[spacyr](https://cran.r-project.org/web/packages/spacyr/index.html).
+```r
+pageName <- "Mammal"
+categoryName <- "Mammals"
+portalName <- "Mammals"
+
+nounPhrasesInArticle.df <- ExtractNounPhrasesInArticle(pageName)
+nounPhrasesInArticle.df <- ExtractNounPhrasesInCategory(categoryName)
+nounPhrasesInArticle.df <- ExtractNounPhrasesInPortal(portalName)
+```
+
 
 ### Metrics functions
 Metrics are from [koRpus](https://cran.r-project.org/web/packages/koRpus/index.html) and [quanteda](https://cran.r-project.org/web/packages/quanteda/index.html) packages
@@ -167,6 +180,10 @@ conditionalReadability.df <- MeasureConditionalReadability(pageName)
 inverseConditionalReadability.df <- MeasureInverseConditionalReadability(pageName)
 ```
 #### Text similarity
+These functions use the packages 
+[textreuse](https://cran.r-project.org/web/packages/textreuse/index.html),
+[lsa](https://cran.r-project.org/web/packages/lsa/index.html)
+.
 ```r
 categoryName <- "Mammals"
 portalName <- "Mammals"
