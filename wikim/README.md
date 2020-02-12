@@ -46,9 +46,16 @@ Since its creation in 2001, Wikipedia became a precious encyclopedic, ontologica
 
 Wikipedia ; metrics ; text similarity ; graph ; sentiment analysis ; readability ; lexical diversity ;  ontology ; bayesian network
 
-## How to Install
+## Coding Style
+Variable names are lowercase.
+Function names begin with verbs and uppercase.
+Compound variable names and compound function names are CamelCase.
 
-The latest development version:
+## A quick start with a few examples
+
+### How to Install
+
+The latest development version (not on CRAN, not yet :) !)
 
 ``` r
 install.packages("glue")
@@ -58,15 +65,6 @@ library(devtools)
 install_github("lbocken/public/wikim")
 library(wikim)
 ```
-
-## Coding Style
-Variable names are lowercase.
-Function names begin with verbs and uppercase.
-Compound variable names and compound function names are CamelCase.
-
-
-
-## A quick start with a few examples
 
 ### Parameters of functions (input)
 ```r
@@ -93,6 +91,22 @@ portalName1 <- "Mammals"
 portalName2 <- "Birds"
 ```
 
+### Names and pageids (be careful to avoid misleadings references and bugs)
+```r
+pageID.df <- GetPageID(pageName)
+pageIDWithRedirects.df <- GetPageIDWithRedirects(pageName)
+pageName.df <- GetPageName(pageid)
+
+simplePageID.df <- GetSimplePageID(pageName)
+simplePageIDWithRedirects.df <- GetSimplePageIDWithRedirects(pageName)
+simplePageName.df <- GetSimplePageName(pageid)
+
+
+answer <- IsValidPageID(pageID)
+answer <- IsValidSimplePageID(pageID)
+
+```
+
 ### Small talk : checking functions
 ```r
 statusOfArticle.df <- CheckStatusOfArticle(name)
@@ -103,8 +117,48 @@ pageNameWithStatusOfPortal.df <- GetPageNameWithStatusOfPortal(name)
 pageNameWithStatusOfCategory.df <- GetPageNameWithStatusOfCategory(name)
 pageNameWithStatusOfArticle.df <- GetPageNameWithStatusOfArticle(name)
 
+IsaPortalInWikipedia(portalName)
+IsaCategoryInWikipedia(categoryName)
+IsaArticleInWikipedia(pageName)
+
+IsaPortalInSimpleWikipedia(portalName)
+IsaCategoryInSimpleWikipedia(categoryName)
+IsaArticleInSimpleWikipedia(pageName)
+
+tokenAsPortalInWikipedia
 ```
+
+### Labelling names as portal names or category names
+```r
+portalName.df <- LabelAsPortal(name)
+categoryName.df <- LabelAsCategory(name)
+
+wikipediaPortalName <- function(string){paste0("Portal:",string)}
+
+```
+
+### Academic fields
+```r
+academicFields <- GetAcademicFields()
+GetSectionsOfGoodAndFeaturedArticlePageWithStatusOfAcademicFieldPortalAndCategory()
+GetSectionsOfGoodAndFeaturedArticlePageWithStatusOfAcademicField()
+GetPortalsAndRedirectsToPortalsOfAcademicFields()
+GetFeaturedArticlesAboutAcademicFields()
+GetAcademicFieldsAsPortalAndCategory()
+GetGoodArticlesAboutAcademicFields()
+GetCategoriesAboutAcademicFields()
+GetPortalsAboutAcademicFields()
+academicFieldsAsPortalAndCategory.df <- GetAcademicFieldsAsPortalAndCategory()
+```
+
 ### Preferred corpus : categories of articles
+Several categories can be used to study chunks of Wikipedia : 
+[featured articles](https://en.wikipedia.org/wiki/Wikipedia:Featured_articles),
+[good articles](https://en.wikipedia.org/wiki/Wikipedia:Good_articles),
+[articles needing rewrite](https://en.wikipedia.org/wiki/Category:Wikipedia_articles_needing_rewrite)
+.
+
+
 #### Featured articles
 ```r
 metaDataOfFeaturedArticles.df <- GetMetaDataOfFeaturedArticles()
@@ -112,6 +166,11 @@ featuredArticles.df <- GetAllFeaturedArticles()
 
 selectionOfFeaturedArticles.df <- GetIntersectionWithFeaturedArticles(names)
 featuredCandidates.df <- GetFeaturedArticles(names)
+
+featuredCandidatesFromPortal.df <- GetFeaturedCandidatesFromPortal(portalName)
+featuredCandidatesFromCategory.df <- GetFeaturedCandidatesFromPortal(categoryName)
+featuredCandidatesFromArticle.df <- GetFeaturedCandidatesFromArticle(pageName)
+
 
 GetFeaturedArticlesOfGoogleTrendsCategories()
 GetFeaturedArticlesOfGoogleTrendsCountries()
@@ -214,6 +273,7 @@ View(simpleArticles.df)
 View(simpleIntroductions.df)
 View(simpleBodyArticles.df)
 ```
+
 ### Tokenization 
 These functions use the packages
 [](),
@@ -227,9 +287,20 @@ wordTokensFromBodyArticle.df <- ExtractWordTokensFromBodyArticle(pageName)
 wordTokensFromIntroduction.df <- ExtractWordTokensFromIntroduction(pageName)
 ```
 
+### Document term matrices
+```r
+documentTermMatrixForPortals.df <- GetDocumentTermMatrixForPortal(portalName)
+documentTermMatrixForCategories.df <- GetDocumentTermMatrixForCategory(categoryName)
+documentTermMatrixForArticles.df <- GetDocumentTermMatrixForArticle(pageName)
+documentTermMatrixForBodyArticles.df <- GetDocumentTermMatrixForPortal(pageName)
+documentTermMatrixForIntroduction.df <- GetDocumentTermMatrixForPortal(pageName)
+```
 
 ### Extraction functions
 ```r
+relatedCategoriesFromPortal.df <- GetRelatedCategoriesFromPortal(portalName)
+
+
 referencesToPortals.df <- ExtractReferencesToPortals(pageName)
 referencesToPortals.df <- ExtractWikiReferencesToPortals(pageName)
 wikiReferencesToPortalsFromPortal.df <- ExtractWikiReferencesToPortalsFromPortal(portalName)
@@ -244,6 +315,13 @@ wikiReferencesToArticlesFromPortal.df <- ExtractWikiReferencesToArticlesFromPort
 wikiReferencesToArticlesFromCategory.df <- ExtractWikiReferencesToArticlesFromCategory(categoryName)
 wikiReferencesToArticlesFromArticle.df <- ExtractWikiReferencesToArticlesFromArticle(articleName)
 
+
+ExtractWikiReferencesToPortals(pageName)
+
+portalNamesOnFeaturedArticle.df <- ExtractPortalNameOnFeaturedArticle(pageName)
+portalNamesOnGoodArticle.df <- ExtractPortalNameOnGoodArticle(pageName)
+
+featuredArticleName <- GetArticlesMembersOfCategory("Featured_articles")
 
 ```
 
@@ -408,6 +486,29 @@ readabilityClustersOfArticlesMembersOfportalName <- GetReadabilityClustersOfArti
 
 PrintHiearchicalClustersOfArticlesMembersOfCategory(categoryName)
 PrintHiearchicalClustersOfArticlesMembersOfPortal(portalName)
+
+```
+
+### Text classification
+These functions use the package
+[fastTextR](https://cran.r-project.org/web/packages/fastTextR/index.html)
+```r
+
+
+
+```
+
+### Text recommendation
+```r
+candidates.df <- GetCandidatesFromPortal(portalName)
+
+recommendationsFromPortal.df <- RecommendFromPortal(portalName)
+recommendationsFromCategory.df <- RecommendFromPortal(categoryName)
+recommendationsFromArticle.df <- RecommendFromPortal(pageName)
+
+RecommendFromPortalWithLabels(portalName)
+
+suggestPortal <- function(wikipediaPageName){
 
 ```
 
@@ -677,27 +778,7 @@ evolutionOfArticle <- MeasureEvolutionOfArticle(pageName)
 
 ```
 
-### Text classification
-These functions use the package
-[fastTextR](https://cran.r-project.org/web/packages/fastTextR/index.html)
-```r
 
-
-
-```
-
-### Text recommendation
-```r
-candidates.df <- GetCandidatesFromPortal(portalName)
-
-recommendationsFromPortal.df <- RecommendFromPortal(portalName)
-recommendationsFromCategory.df <- RecommendFromPortal(categoryName)
-recommendationsFromArticle.df <- RecommendFromPortal(pageName)
-
-RecommendFromPortalWithLabels(portalName)
-
-
-```
 
 
 # Abridged functions and comparisons
