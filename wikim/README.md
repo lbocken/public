@@ -68,47 +68,187 @@ Compound variable names and compound function names are CamelCase.
 
 ## A quick start with a few examples
 
-### Acquisition functions
-#### Articles
+### Parameters of functions (input)
 ```r
+name <- "apongabrauabnapie"
+name <- "Mammal"
+name <- c("Mammal", "Mammals")
+name1 <- "Mammal"
+name2 <- "Mammals"
+
 pageName <- "Mammal"
-article <- GetArticleFromPageName(pageName)
-introduction <- GetIntroductionFromPageName(pageName)
-bodyText <- GetBodyArticleFromPageName(pageName)
+pageName <- c("Mammal", "Bird")
+pageName1 <- "Mammal"
+pageName2 <- "Bird"
+pageName3 <- "Yeomanry_Cavalry"
+
+categoryName <- "Mammals"
+categoryName <- c("Mammals", "Birds")
+categoryName1 <- "Mammals"
+categoryName2 <- "Marsupials"
+
+portalName <- "Mammals"
+portalName <- c("Mammals", "Birds")
+portalName1 <- "Mammals"
+portalName2 <- "Birds"
 ```
+
+### Small talk : checking functions
+```r
+statusOfArticle.df <- CheckStatusOfArticle(name)
+statusOfCategory.df <- CheckStatusOfCategory(name)
+statusOfPortal.df <- CheckStatusOfPortal(name)
+
+pageNameWithStatusOfPortal.df <- GetPageNameWithStatusOfPortal(name)
+pageNameWithStatusOfCategory.df <- GetPageNameWithStatusOfCategory(name)
+pageNameWithStatusOfArticle.df <- GetPageNameWithStatusOfArticle(name)
+
+```
+### Preferred corpus : categories of articles
+#### Featured articles
+```r
+metaDataOfFeaturedArticles.df <- GetMetaDataOfFeaturedArticles()
+featuredArticles.df <- GetAllFeaturedArticles()
+
+selectionOfFeaturedArticles.df <- GetIntersectionWithFeaturedArticles(names)
+featuredCandidates.df <- GetFeaturedArticles(names)
+
+GetFeaturedArticlesOfGoogleTrendsCategories()
+GetFeaturedArticlesOfGoogleTrendsCountries()
+
+portalNamesOnFeaturedArticles <- ExtractPortalNameOnFeaturedArticle(pageName)
+
+```
+#### Good articles
+```r
+goodArticles.df <- GetGoodArticles()
+goodCandidates.df <- GetGoodArticles(names)
+goodCandidatesFromPortal.df <- GetGoodCandidatesFromPortal(portalName)
+
+portalNamesOnGoodArticles <- ExtractPortalNameOnGoodArticle(pageName)
+ 
+```
+#### Needing rewrite articles
+```r
+needingRewriteArticles.df
+```
+
+### Acquisition functions
+
+#### Portals
+```r
+namesOfPortals.df <- GetAllNamesOfPortals()
+portals.df <- GetAllPortals()
+portalsMembersOfCategory.df <- GetPortalsMembersOfCategory(categoryName)
+portalsInPage.df <- ExtractPortalsInPage(pageName) 
+portalID.df <- GetPortalIDwithRedirects(pageName)
+portalTitle.df <- GetPortalNameWithRedirects(pageName)
+portalsMembersOfCategory.df <- GetPortalsMembersOfCategory(categoryName)
+relatedPortalsFromPortal.df <- GetRelatedPortalsFromPortal(portalName)
+
+portals.df <- GetPortal(portalName)
+rawPortals.df <- GetRawPortal(portalName)
+
+simplePortals.df <- GetSimplePortal(portalName)
+simpleRawPortals.df <- GetSimpleRawPortal(portalName)
+
+# portals in/of portalIndexFor
+
+portalsInArticle.df <- GetPortalsInArticle(pageName)
+portalsInCategory.df <- GetPortalsInCategory(categoryName)
+
+namesHomonymsOfPortalInArticle.df <- ExtractNamesHomonymsOfPortalInArticle(pageName)
+namesHomonymsOfPortalInBodyArticle.df <- ExtractNamesHomonymsOfPortalInBodyArticle(pageName)
+namesHomonymsOfPortalInIntroduction.df <- ExtractNamesHomonymsOfPortalInIntroduction(pageName)
+namesHomonymsOfPortalInCategory.df <- ExtractNamesHomonymsOfPortalInBodyArticle(categoryName)
+namesHomonymsOfPortalInPortal.df <- ExtractNamesHomonymsOfPortalInIntroduction(portalName)
+
+
+
+portalsAboutAcademicFields.df <- GetPortalsAboutAcademicFields()
+portalsAboutGoogleTrendsCategories.df <- GetPortalsAboutGoogleTrendsCategories()
+portalsAboutGoogleTrendsCountries.df <- GetPortalsAboutGoogleTrendsCountries()
+
+```
+
 
 #### Categories
 ```r
-categoryName <- "Mammals"
 categoryMetaData.df <- GetCategoryMetaData(categoryName)
 categoriesMembersOfCategory.df <- GetCategoriesMembersOfCategory(categoryName)
 pagesMembersOfCategory.df <- GetPagesMembersOfCategory(categoryName)
 portalsMembersOfCategory.df <- GetPortalsMembersOfCategory(categoryName)
 
+simpleCategoryMetaData.df <- GetSimpleCategoryMetaData(SimpleCategoryName)
+categoriesMembersOfSimpleCategory.df <- GetCategoriesMembersOfSimpleCategory(SimpleCategoryName)
+pagesMembersOfSimpleCategory.df <- GetPagesMembersOfSimpleCategory(SimpleCategoryName)
+portalsMembersOfSimpleCategory.df <- GetPortalsMembersOfSimpleCategory(SimpleCategoryName)
+
 View(categoryMetaData.df)
 View(categoriesMembersOfCategory.df)
 View(pagesMembersOfCategory.df)
 View(portalsMembersOfCategory.df)
-```
-#### Portals
-```r
-portalName <- "Mammals"
-portal <- GetPortal(portalName)
 
+View(simpleCategoryMetaData.df)
+View(categoriesMembersOfSimpleCategory.df)
+View(pagesMembersOfSimpleCategory.df)
+View(portalsMembersOfSimpleCategory.df)
 ```
+
+
+#### Articles (Values : dataframes with 4 attributes (subdomain,pageName,textType,text)
+```r
+articles.df <- GetArticleFromPageName(pageName)
+introductions.df <- GetIntroductionFromPageName(pageName)
+bodyArticles.df <- GetBodyArticleFromPageName(pageName)
+
+simpleArticles.df <- GetSimpleArticleFromPageName(pageName)
+simpleIntroductions.df <- GetSimpleIntroductionFromPageName(pageName)
+simpleBodyArticles.df <- GetSimpleBodyArticleFromPageName(pageName)
+
+View(articles.df)
+View(introductions.df)
+View(bodyArticles.df)
+
+View(simpleArticles.df)
+View(simpleIntroductions.df)
+View(simpleBodyArticles.df)
+```
+### Tokenization 
+These functions use the packages
+[](),
+[]().
+
+```r
+wordTokensFromPortal.df <- ExtractWordTokensFromPortal(portalName)
+wordTokensFromCategory.df <- ExtractWordTokensFromCategory(categoryName)
+wordTokensFromArticle.df <- ExtractWordTokensFromArticle(pageName)
+wordTokensFromBodyArticle.df <- ExtractWordTokensFromBodyArticle(pageName)
+wordTokensFromIntroduction.df <- ExtractWordTokensFromIntroduction(pageName)
+```
+
+
 ### Extraction functions
 ```r
-pageName <- "Mammal"
 referencesToPortals.df <- ExtractReferencesToPortals(pageName)
-referencesToCategories.df <- ExtractReferencesToCategories(pageName)
-referencesToArticles.df <- ExtractReferencesToArticles(pageName)
+referencesToPortals.df <- ExtractWikiReferencesToPortals(pageName)
+wikiReferencesToPortalsFromPortal.df <- ExtractWikiReferencesToPortalsFromPortal(portalName)
+wikiReferencesToPortalsFromCategory.df <- ExtractWikiReferencesToPortalsFromCategory(categoryName)
+wikiReferencesToPortalsFromArticle.df <- ExtractWikiReferencesToPortalsFromArticle(articleName)
+
+wikiReferencesToCategoriesFromPortal.df <- ExtractWikiReferencesToCategoriesFromPortal(portalName)
+wikiReferencesToCategoriesFromCategory.df <- ExtractWikiReferencesToCategoriesFromCategory(categoryName)
+wikiReferencesToCategoriesFromArticle.df <- ExtractWikiReferencesToCategoriesFromArticle(articleName)
+
+wikiReferencesToArticlesFromPortal.df <- ExtractWikiReferencesToArticlesFromPortal(portalName)
+wikiReferencesToArticlesFromCategory.df <- ExtractWikiReferencesToArticlesFromCategory(categoryName)
+wikiReferencesToArticlesFromArticle.df <- ExtractWikiReferencesToArticlesFromArticle(articleName)
+
+
 ```
 
 ### Basic operations and measures on sets
 ```r
-categoryName1 <- "Mammals"
-categoryName2 <- "Marsupials"
-
 portalCardinalityOInCategory <- MeasurePortalCardinalityInCategory(categoryName)
 categoryCardinalityOInCategory <- MeasureCategoryCardinalityInCategory(categoryName)
 articleCardinalityOInCategory <- MeasureArticleCardinalityInCategory(categoryName)
@@ -126,13 +266,7 @@ intersectionOfCategories(portalName1, portalName2)
 unionOfCategories(portalName1, portalName2)
 ```
 
-### Tokenization 
-These functions use the packages
-[](),
-[]().
 
-```r
-```
 
 ### Stemming
 These functions use the packages
@@ -140,10 +274,6 @@ These functions use the packages
 []().
 
 ```r
-pageName <- "Mammal"
-portalName <- "Mammals"
-categoryName <- "Mammals"
-
 stemsInArticle <- ExtractStemsInArticle(pageName)
 stemsInPortal <- ExtractStemsInPortal(portalName)
 stemsInCategory <- ExtractStemsInCategory(categoryName)
@@ -152,7 +282,6 @@ stemsInCategory <- ExtractStemsInCategory(categoryName)
 
 ### Parts-Of-Speech Tagging
 ```r
-pageName <- "Mammal"
 partOfSpeechOfArticle <- ExtractPartsOfSpeechOfArticle(pageName)
 partOfSpeechOfPortal <- ExtractPartsOfSpeechOfArticle(portalName)
 partOfSpeechOfCategory <- ExtractPartsOfSpeechOfArticle(categoryName)
@@ -165,7 +294,6 @@ These functions use the package
 [RKEA](https://cran.r-project.org/web/packages/RKEA/index.html).
 
 ```r
-pageName <- "Mammal"
 keyPhrasesFromArticles <- ExtractKeyPhrasesFromArticle(pageName)
 ```
 
@@ -176,10 +304,6 @@ These functions use the package
 [maptpx](https://cran.r-project.org/web/packages/maptpx/index.html).
 
 ```r
-pageName <- "Mammal"
-categoryName <- "Mammals"
-portalName <- "Mammals"
-
 topicModelFromArticle <- GetTopicModelsFromArticle(pageName)
 topicModelFromCategory <- GetTopicModelsFromArticle(categoryName)
 topicModelFromPortal <- GetTopicModelsFromArticle(portalName)
@@ -190,10 +314,6 @@ These functions use the packages
 [phrasemachine](https://cran.r-project.org/web/packages/phrasemachine/index.html),
 [spacyr](https://cran.r-project.org/web/packages/spacyr/index.html).
 ```r
-pageName <- "Mammal"
-categoryName <- "Mammals"
-portalName <- "Mammals"
-
 nounPhrasesInArticle.df <- ExtractNounPhrasesInArticle(pageName)
 nounPhrasesInArticle.df <- ExtractNounPhrasesInCategory(categoryName)
 nounPhrasesInArticle.df <- ExtractNounPhrasesInPortal(portalName)
@@ -203,12 +323,17 @@ nounPhrasesInArticle.df <- ExtractNounPhrasesInPortal(portalName)
 ### Metrics functions
 Metrics are from [koRpus](https://cran.r-project.org/web/packages/koRpus/index.html) and [quanteda](https://cran.r-project.org/web/packages/quanteda/index.html) packages
 
+```r
+measuresOfArticles.df <- MeasureArticle(pageName)
+measuresOfBodyArticles.df <- MeasureBodyArticle(pageName)
+measuresOfIntroductions.df <- MeasureIntroduction(pageName)
+measuresOfCategories.df <- MeasureCategory(categoryName)
+measuresOfPortals.df <- MeasurePortal(portalName)
+```
+
+
 #### Frequency Analysis
 ```r
-pageName <- "Mammal"
-categoryName <- "Mammals"
-portalName <- "Mammals"
-
 frequencyOfTokensInArticle <- MeasureFrequencyOfTokensInArticle(pageName)
 frequencyOfTokensInCategory <- MeasureFrequencyOfTokensInCategory(categoryName)
 frequencyOfTokensInPortal <- MeasureFrequencyOfTokensInPortal(portalName)
@@ -221,7 +346,6 @@ frequencyOfNounPhrasesInPortal <- MeasureFrequencyOfNounPhrasesInPortal(portalNa
 
 #### Text Length
 ```r
-pageName <- "Mammal"
 articleLength.df <- MeasureArticleLength(pageName)
 introductionLength.df <- MeasureIntroductionLength(pageName)
 bodyArticleLength.df <- MeasureBodyArticleLength(pageName)
@@ -233,7 +357,6 @@ inverseConditionalLength.df <- MeasureInverseConditionalLength(pageName)
 
 #### Text Lexical Diversity
 ```r
-pageName <- "Mammal"
 articleLexicalDiversity.df <- MeasureArticleLexicalDiversity(pageName)
 introductionLexicalDiversity.df <- MeasureIntroductionLexicalDiversity(pageName)
 bodyArticleLexicalDiversity.df <- MeasureBodyArticleLexicalDiversity(pageName)
@@ -244,7 +367,6 @@ inverseConditionalLexicalDiversity.df <- MeasureInverseConditionalLexicalDiversi
 ```
 #### Text Readability
 ```r
-pageName <- "Mammal"
 articleReadability.df <- MeasureArticleReadability(pageName)
 introductionReadability.df <- MeasureIntroductionReadability(pageName)
 bodyArticleReadability.df <- MeasureBodyArticleReadability(pageName)
@@ -258,9 +380,6 @@ These functions use the packages
 [lsa](https://cran.r-project.org/web/packages/lsa/index.html)
 .
 ```r
-categoryName <- "Mammals"
-portalName <- "Mammals"
-pageName <- "Mammal"
 textSimilarityBetweenArticlesMembersOfCategory.df <- MeasureTextSimilarityBetweenArticlesMembersOfCategory(categoryName)
 textSimilarityBetweenArticlesMembersOfPortal.df <- MeasureTextSimilarityBetweenArticlesMembersOfPortal(portalName)
 textSimilarityBetweenArticlesReferedInArticle.df <- MeasureTextSimilarityBetweenArticlesReferedInArticle(pageName)
@@ -272,8 +391,6 @@ These functions use the package
 [textcat](https://cran.r-project.org/web/packages/textcat/index.html).
 
 ```r
-categoryName <- "Mammals"
-portalName <- "Mammals"
 categoriesOfArticles <- CategorizeArticlesMembersOfCategory(categoryName)
 categoriesOfArticles <- CategorizeArticlesMembersOfPortal(portalName)
 ```
@@ -286,9 +403,6 @@ These functions use the package
 [fastcluster](https://cran.r-project.org/web/packages/fastcluster/index.html).
 
 ```r
-categoryName <- "Mammals"
-portalName <- "Mammals"
-
 readabilityClustersOfArticlesMembersOfCategory <- GetReadabilityClustersOfArticlesMembersOfCategory(categoryName)
 readabilityClustersOfArticlesMembersOfportalName <- GetReadabilityClustersOfArticlesMembersOfCategory(portalName)
 
@@ -300,7 +414,6 @@ PrintHiearchicalClustersOfArticlesMembersOfPortal(portalName)
 #### Grammars
 These functions use the package [gramEvol](https://cran.r-project.org/web/packages/gramEvol/index.html).
 ```r
-pageName <- "Mammal"
 grammarFromArticle <- BuildGrammarFromArticle(pageName)
 grammarFromCategory <- BuildGrammarFromCategory(categoryName)
 grammarFromPortal <- BuildGrammarFromPortal(portalName)
@@ -322,8 +435,6 @@ These functions use the packages
 [RSentiment](https://cran.r-project.org/web/packages/RSentiment/RSentiment.pdf)
 
 ```r
-pageName1 <- "Yeomanry_Cavalry"
-pageName2 <- "Bat"
 sentimentAnalysisOfArticle1.df <- MeasureSentimentAnalysisOfArticle(pageName1)
 sentimentAnalysisOfArticle2.df <- MeasureSentimentAnalysisOfArticle(pageName2)
 
@@ -337,10 +448,6 @@ These functions use the package
 [wordnet](https://cran.r-project.org/web/packages/wordnet/index.html) for the Lexical database [WordNet](https://wordnet.princeton.edu/). [Documentation](https://wordnet.princeton.edu/documentation) should be consulted, in particular on [pointers](https://wordnet.princeton.edu/documentation/wnsearch3wn).
 
 ```r
-portalName <- "Mammals"
-categoryName <- "Mammal"
-pageName <- "Mammal"
-
 entriesInWordNet.df <- CheckIfInWordNet(name)
 entriesInWikipediaAndWordNet.df <- CheckIfInWikipediaAndWordNet(name)
 
@@ -373,24 +480,32 @@ measuresOfWordNetResourcesInPortal.df <- MeasureWordNetResourcesInPortal(portalN
 articleWithWordNetAnnotations <- AnnotateArticleWithWordNetResources(pageName)
 bodyArticleWithWordNetAnnotations <- AnnotateBodyArticleWithWordNetResources(pageName)
 introductionWithWordNetAnnotations <- AnnotateIntroductionWithWordNetResources(pageName)
-
-
 ```
 
 #### Google Trends
 These functions use the packages 
 [gtrendsR](https://cran.r-project.org/web/packages/gtrendsR/index.html) and
-[trendyy](https://cran.r-project.org/web/packages/trendyy/trendyy.pdf)
-```r
+[trendyy](https://cran.r-project.org/web/packages/trendyy/trendyy.pdf).
 
-pageName <- "Mammal"
-portalName <- "Mammals"
-categoryName <- "Mammals"
+##### Countries
+```r
+googleCountriesInArticle.df <- GetGoogleCountriesInArticle(pageName)
+googleCountriesInBodyArticle.df <- GetGoogleCountriesInBodyArticle(pageName)
+googleCountriesInIntroduction.df <- GetGoogleCountriesInIntroduction(pageName)
+googleCountriesInPortal.df <- GetGoogleCountriesInPortal(pageName)
+googleCountriesInCategory.df <- GetGoogleCountriesInCategory(pageName)
+
+articlesHomonymsOfGoogleCountries.df <- GetArticlesHomonymsOfGoogleCountries()
+bodyArticlesHomonymsOfGoogleCountries.df <- GetBodyArticlesHomonymsOfGoogleCountries()
+introductionsHomonymsOfGoogleCountries.df <- GetIntroductionsHomonymsOfGoogleCountries()
+portalsHomonymsOfGoogleCountries.df <- GetPortalsHomonymsOfGoogleCountries()
+categoriesHomonymsOfGoogleCountries.df <- GetCategoriesHomonymsOfGoogleCountries()
 
 cities
 regions
-topics
 ```
+
+
 
 ##### Categories
 ```r
@@ -418,6 +533,11 @@ portalsHomonymsOfGoogleTrendsCategories.df <- GetPortalsHomonymsOfGoogleTrendsCa
 categoriesHomonymsOfGoogleTrendsCategories.df <- GetCategoriesHomonymsOfGoogleTrendsCategories()
 
 
+wordNetDictionaryOfGoogleTrendsCategories.df <- GetWordNetDictionaryOfGoogleTrendsCategories()
+wordNetOntologyOfGoogleTrendsCategories <- BuildWordNetOntologyOfGoogleTrendsCategories()
+categoryGraphForGoogleTrendsCategories <- GetCategoryGraphForGoogleTrendsCategories()
+
+
 googleTrendsCategoriesInWikipedia <- CheckGoogleTrendsCategoriesInWikipedia()
 
 semanticRelatednessWithGoogleTrendsCategories <- MeasureSemanticRelatedenessWithGoogleTrendsCategories(pageName)
@@ -428,23 +548,10 @@ wikipediaArticlesOfGoogleTrendsCategories <- GetArticlesOfGoogleTrendsCategories
 
 measuresOfGoogleTrendsCategoriesInWikipedia <- MeasureGoogleTrendsCategoriesInWikipedia()
 
-
+topics
 ```
 
-##### Countries
-```r
-countriesInArticle.df <- GetCountriesInArticle(pageName)
-countriesInBodyArticle.df <- GetCountriesInBodyArticle(pageName)
-countriesInIntroduction.df <- GetCountriesInIntroduction(pageName)
-countriesInPortal.df <- GetCountriesInPortal(pageName)
-countriesInCategory.df <- GetCountriesInCategory(pageName)
 
-articlesHomonymsOfGoogleCountries.df <- GetArticlesHomonymsOfGoogleCountries()
-bodyArticlesHomonymsOfGoogleCountries.df <- GetBodyArticlesHomonymsOfGoogleCountries()
-introductionsHomonymsOfGoogleCountries.df <- GetIntroductionsHomonymsOfGoogleCountries()
-portalsHomonymsOfGoogleCountries.df <- GetPortalsHomonymsOfGoogleCountries()
-categoriesHomonymsOfGoogleCountries.df <- GetCategoriesHomonymsOfGoogleCountries()
-```
 
 
 
@@ -493,15 +600,19 @@ These functions use the packages
 [ggwordcloud](https://cran.r-project.org/web/packages/ggwordcloud/index.html)
 .
 ```r
-pageName <- "Mammal"
-categoryName <- "Mammals"
-portalName <- "Mammals"
+PrintNounPhraseWordCloudOfIntroduction(pageName)
+PrintNounPhraseWordCloudOfArticle(pageName)
+PrintNounPhraseWordCloudOfBodyArticle(pageName)
+PrintNounPhraseWordCloudOfCategory(categoryName)
+PrintNounPhraseWordCloudOfPortal(portalName)
 
 PrintWordCloudOfIntroduction(pageName)
 PrintWordCloudOfArticle(pageName)
 PrintWordCloudOfBodyArticle(pageName)
 PrintWordCloudOfCategory(categoryName)
 PrintWordCloudOfPortal(portalName)
+
+
 
 ```
 #### Ontologies
@@ -510,11 +621,7 @@ These functions use the packages
 [ontologyPlot](https://cran.r-project.org/web/packages/ontologyPlot/index.html),
 [ontologySimilarity](https://cran.r-project.org/web/packages/ontologySimilarity/index.html).
 ```r
-pageName <- "Mammal"
-categoryName <- "Mammals"
-portalName <- "Mammals"
-
-ontologyFromArticle <- BuildOntologyFromPortal(portalName)
+ontologyFromArticle <- BuildOntologyFromArticle(pageName)
 ontologyFromPortal <- BuildOntologyFromPortal(portalName)
 ontologyFromCategory <- BuildOntologyFromCategory(categoryName)
 
@@ -523,6 +630,10 @@ PlotOntologyFromPortal(portalName)
 PlotOntologyFromCategory(categoryName)
 
 ontologySimilarity <- MeasureSimilarityBetweenOntologies(ontologyFromPortal,ontologyFromCategory)
+
+similarityBetweenOntologiesFromTwoArticles <- MeasureSimilarityBetweenOntologiesFromTwoArticles(pageName1, pageName2)
+similarityBetweenOntologiesFromTwoCategories <- MeasureSimilarityBetweenOntologiesFromTwoCategories(categoryName1, categoryName2)
+similarityBetweenOntologiesFromTwoPortals <- MeasureSimilarityBetweenOntologiesFromTwoPortals(portalName1, portalName2)
 
 ```
 
@@ -535,10 +646,6 @@ These functions use the packages
 
 
 ```r
-pageName <- "Mammal"
-categoryName <- "Mammals"
-portalName <- "Mammals"
-
 bayesianNetworksFromArticles <- ExtractBayesianNetworksFromArticle(pageName)
 bayesianNetworksFromCategory <- ExtractBayesianNetworksFromArticle(categoryName)
 bayesianNetworksFromPortal <- ExtractBayesianNetworksFromArticle(portalName)
@@ -552,7 +659,6 @@ These functions use the packages
 [crfsuite](https://cran.r-project.org/web/packages/crfsuite/index.html).
 
 ```r
-pageName <- "Mammal"
 crfFromArticle <- ExtractCRFfromArticle(pageName)
 crfFromCategory <- ExtractCRFfromPortal(pageName)
 crfFromPortal <- ExtractCRFfromCategory(pageName)
@@ -562,30 +668,40 @@ crfFromPortal <- ExtractCRFfromCategory(pageName)
 ### Time Series Analysis
 
 ```r
-pageName <- "Mammal"
 evolutionOfArticle <- MeasureEvolutionOfArticle(pageName)
 ```
 
 
 ### Correspondence Analysis
 ```r
-pageName <- "Mammal"
+
 ```
 
 ### Text classification
 These functions use the package
 [fastTextR](https://cran.r-project.org/web/packages/fastTextR/index.html)
 ```r
-categoryName <- "Mammals"
-portalName <- "Mammals"
+
+
 
 ```
 
+### Text recommendation
+```r
+candidates.df <- GetCandidatesFromPortal(portalName)
+
+recommendationsFromPortal.df <- RecommendFromPortal(portalName)
+recommendationsFromCategory.df <- RecommendFromPortal(categoryName)
+recommendationsFromArticle.df <- RecommendFromPortal(pageName)
+
+RecommendFromPortalWithLabels(portalName)
+
+
+```
+
+
 # Abridged functions and comparisons
 ```r
-pageName1 <- "dog"
-pageName2 <- "mammal"
-
 # Length of introduction 
 loi(pageName1) < loi(pageName2)
 
