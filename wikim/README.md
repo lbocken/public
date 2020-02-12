@@ -340,9 +340,38 @@ portalName <- "Mammals"
 categoryName <- "Mammal"
 pageName <- "Mammal"
 
-resourcesOfWordNetForPortal.df <- ExtractWordNet(portalName)
-resourcesOfWordNetForCategory.df <- ExtractWordNet(categoryName)
-resourcesOfWordNetForArticle.df <- ExtractWordNet(pageName)
+entriesInWordNet.df <- CheckIfInWordNet(name)
+
+wordNetDictionaryForPortal.df <- GetWordNetDictionaryForPortal(portalName)
+wordNetDictionaryForCategory.df <- GetWordNetDictionaryForCategory(categoryName)
+wordNetDictionaryForArticle.df <- GetWordNetDictionaryForArticle(pageName)
+wordNetDictionaryForIntroduction.df <- GetWordNetDictionaryForIntroduction(pageName)
+wordNetDictionaryForBodyArticle.df <- GetWordNetDictionaryForBodyArticle(pageName)
+
+nounsSynonymsOfRelatedPagesInArticle.df <- GetNounsSynonymsOfRelatedPagesInArticle(pageName)
+nounsSynonymsOfMembersOfCategory.df <- GetNounsSynonymsOfMembersOfCategory(categoryName)
+nounsSynonymsOfMembersOfPortals.df <- GetNounsSynonymsOfMembersOfPortal(portalName)
+
+nounsHypernymsOfRelatedPagesInArticle.df <- GetNounsHypernymsOfRelatedPagesInArticle(pageName)
+nounsHypernymsOfMembersOfCategory.df <- GetNounsHypernymsOfMembersOfCategory(categoryName)
+nounsHypernymsOfMembersOfPortals.df <- GetNounsHypernymsOfMembersOfPortal(portalName)
+
+wordNetOntologyFromPortal <- BuildWordNetOntologyFromPortal(portalName)
+wordNetOntologyFromCategory <- BuildWordNetOntologyFromCategory(categoryName)
+wordNetOntologyFromArticle <- BuildWordNetOntologyFromArticle(pageName)
+wordNetOntologyFromIntroduction <- BuildWordNetOntologyFromIntroduction(pageName)
+wordNetOntologyFromBodyArticle <- BuildWordNetOntologyFromBodyArticle(pageName)
+
+measuresOfWordNetResourcesInArticle.df <- MeasureWordNetResourcesInArticle(pageName)
+measuresOfWordNetResourcesInBodyArticle.df <- MeasureWordNetResourcesInBodyArticle(pageName)
+measuresOfWordNetResourcesInIntroduction.df <- MeasureWordNetResourcesInIntroduction(pageName)
+measuresOfWordNetResourcesInCategory.df <- MeasureWordNetResourcesInCategory(categoryName)
+measuresOfWordNetResourcesInPortal.df <- MeasureWordNetResourcesInPortal(portalName)
+
+articleWithWordNetAnnotations <- AnnotateArticleWithWordNetResources(pageName)
+bodyArticleWithWordNetAnnotations <- AnnotateBodyArticleWithWordNetResources(pageName)
+introductionWithWordNetAnnotations <- AnnotateIntroductionWithWordNetResources(pageName)
+
 
 ```
 
