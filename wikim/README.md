@@ -137,7 +137,7 @@ wikipediaPortalName <- function(string){paste0("Portal:",string)}
 
 ```
 
-### Academic fields
+### A focus on sciences and academic fields to categorize the world
 ```r
 academicFields <- GetAcademicFields()
 GetSectionsOfGoodAndFeaturedArticlePageWithStatusOfAcademicFieldPortalAndCategory()
@@ -149,6 +149,7 @@ GetGoodArticlesAboutAcademicFields()
 GetCategoriesAboutAcademicFields()
 GetPortalsAboutAcademicFields()
 academicFieldsAsPortalAndCategory.df <- GetAcademicFieldsAsPortalAndCategory()
+GetPortalsAndRedirectsToPortalsOfAcademicFields()
 ```
 
 ### Preferred corpus : categories of articles
@@ -176,6 +177,23 @@ GetFeaturedArticlesOfGoogleTrendsCategories()
 GetFeaturedArticlesOfGoogleTrendsCountries()
 
 portalNamesOnFeaturedArticles <- ExtractPortalNameOnFeaturedArticle(pageName)
+GetFeaturedArticlesWithStatusOfPortalAndCategory()
+GetNamesOfFeaturedArticlesWithStatusOfPortalName()
+GetNamesOfFeaturedArticlesWithStatusOfPortalAndCategory()
+GetSectionsOfGoodAndFeaturedArticlePageWithStatusOfPortalAndCategory()
+GetSectionsOfGoodAndFeaturedArticlePageWithStatusOfAcademicFieldPortalAndCategory()
+
+GetFeaturedArticles(pageName)
+ExtractRawFeaturedArticles()
+SampleFeaturedArticlesAbout(number)
+GetFeaturedCandidatesFromPortal(portalName)
+GetFeaturedCandidatesFromArticle(articleName)
+GetFeaturedCandidatesFromCategory(categoryName)
+ExtractSectionsOfFeaturedArticles()
+ExtractPortalNameOnFeaturedArticle(pageName)
+ExtractSubSectionsOfFeaturedArticles()
+ExtractSubSubSectionsOfFeaturedArticles()
+GetNamesOfFeaturedArticlesWithStatusOfPortal()
 
 ```
 #### Good articles
@@ -185,6 +203,8 @@ goodCandidates.df <- GetGoodArticles(names)
 goodCandidatesFromPortal.df <- GetGoodCandidatesFromPortal(portalName)
 
 portalNamesOnGoodArticles <- ExtractPortalNameOnGoodArticle(pageName)
+GetNamesOfGoodArticlesWithStatusOfPortal()
+GetGoodArticlesWithStatusOfPortalAndCategory()
  
 ```
 #### Needing rewrite articles
@@ -265,6 +285,9 @@ simpleArticles.df <- GetSimpleArticleFromPageName(pageName)
 simpleIntroductions.df <- GetSimpleIntroductionFromPageName(pageName)
 simpleBodyArticles.df <- GetSimpleBodyArticleFromPageName(pageName)
 
+
+articlesMembersOfPortalAndCategory.df <- GetArticlesMembersOfPortalAndCategory(portalName, categoryName)
+
 View(articles.df)
 View(introductions.df)
 View(bodyArticles.df)
@@ -300,6 +323,7 @@ documentTermMatrixForIntroduction.df <- GetDocumentTermMatrixForPortal(pageName)
 ```r
 relatedCategoriesFromPortal.df <- GetRelatedCategoriesFromPortal(portalName)
 
+ExtractWikiReferencesToArticlesFromPortal(portalName)
 
 referencesToPortals.df <- ExtractReferencesToPortals(pageName)
 referencesToPortals.df <- ExtractWikiReferencesToPortals(pageName)
@@ -317,6 +341,7 @@ wikiReferencesToArticlesFromArticle.df <- ExtractWikiReferencesToArticlesFromArt
 
 
 ExtractWikiReferencesToPortals(pageName)
+wikipediaPortalsExtraction(pageName)
 
 portalNamesOnFeaturedArticle.df <- ExtractPortalNameOnFeaturedArticle(pageName)
 portalNamesOnGoodArticle.df <- ExtractPortalNameOnGoodArticle(pageName)
@@ -409,6 +434,23 @@ measuresOfCategories.df <- MeasureCategory(categoryName)
 measuresOfPortals.df <- MeasurePortal(portalName)
 ```
 
+#### Cardinalities
+```r
+numberOfWikiReferencesToPortals.df <- MeasureNumberOfWikiReferencesToPortals(pageName)
+numberOfWikiReferencesToCategories.df <- MeasureNumberOfWikiReferencesToCategories(pageName)
+numberOfWikiReferencesToArticles.df <- MeasureNumberOfWikiReferencesToArticles(pageName)
+
+additivityOfWikipediaPortals
+
+```
+
+#### Density
+```r
+densityOfPortals.df <- MeasureDensityOfPortal(portalName)
+densityOfCategories.df <- MeasureDensityOfCategory(categoryName)
+densityOfArticles.df <- MeasureDensityOfArticle(pageName)
+
+```
 
 #### Frequency Analysis
 ```r
@@ -462,6 +504,29 @@ textSimilarityBetweenArticlesMembersOfCategory.df <- MeasureTextSimilarityBetwee
 textSimilarityBetweenArticlesMembersOfPortal.df <- MeasureTextSimilarityBetweenArticlesMembersOfPortal(portalName)
 textSimilarityBetweenArticlesReferedInArticle.df <- MeasureTextSimilarityBetweenArticlesReferedInArticle(pageName)
 
+
+jaccardIndexOfWikiReferencesToPortals.df <- MeasureJaccardIndexOfWikiReferencesToPortals(pageName1, pageName2)
+jaccardIndexOfWikiReferencesToCategories.df <- MeasureJaccardIndexOfWikiReferencesToCategories(pageName1, pageName2)
+jaccardIndexOfWikiReferencesToArticles.df <- MeasureJaccardIndexOfWikiReferencesToArticles(pageName1, pageName2)
+
+
+```
+
+### Similarity
+```r
+portalSimilarity <- MeasurePortalSimilarity(portalName1, portalName2)
+categorySimilarity <- MeasureCategorySimilarity(categoryName1, categoryName2)
+articleSimilarity <- MeasureArticleSimilarity(pageName1, pageName2)
+bpdyArticleSimilarity <- MeasureBodyArticleSimilarity(pageName1, pageName2)
+introductionSimilarity <- MeasureIntroductionSimilarity(pageName1, pageName2)
+
+MeasureJaccardIndexBetweenPageNamedAndMembersOfPortal(portalName)
+
+```
+### Conditional complexity
+```r
+MeasureConditionalIndexOfWikiReferencesToPortals(pageName1, pageName2)
+
 ```
 
 ### Text categorization
@@ -508,8 +573,10 @@ recommendationsFromArticle.df <- RecommendFromPortal(pageName)
 
 RecommendFromPortalWithLabels(portalName)
 
-suggestPortal <- function(wikipediaPageName){
-
+SuggestPortal(wikipediaPageName)
+RecommendWithCategoriesOfTextDifficultyFromPortal(portalName)
+RecommendWithCategoriesOfTextReadabilityFromPortal(portalName)
+recommendationOfEntriesWithStatusOfPortal
 ```
 
 #### Grammars
