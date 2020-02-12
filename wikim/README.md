@@ -373,6 +373,16 @@ These functions use the packages
 
 ```r
 ```
+#### Public Library Of Science
+These functions use the package 
+[rplos](https://cran.r-project.org/web/packages/rplos/index.html).
+
+```r
+```
+
+#### Scholarly Articles
+These functions use the package
+[fulltext](https://cran.r-project.org/web/packages/fulltext/index.html).
 
 ## Visualization
 
