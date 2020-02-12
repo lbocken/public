@@ -333,7 +333,8 @@ sentimentAnalysisOfArticle2.df <- MeasureSentimentAnalysisOfArticle(pageName2)
 
 ## Cross References
 #### WordNet
-These functions use the package [wordnet](https://cran.r-project.org/web/packages/wordnet/index.html) for the Lexical database [WordNet](https://wordnet.princeton.edu/)
+These functions use the package 
+[wordnet](https://cran.r-project.org/web/packages/wordnet/index.html) for the Lexical database [WordNet](https://wordnet.princeton.edu/). [Documentation](https://wordnet.princeton.edu/documentation) should be consulted, in particular on [pointers](https://wordnet.princeton.edu/documentation/wnsearch3wn).
 
 ```r
 portalName <- "Mammals"
@@ -341,6 +342,7 @@ categoryName <- "Mammal"
 pageName <- "Mammal"
 
 entriesInWordNet.df <- CheckIfInWordNet(name)
+entriesInWikipediaAndWordNet.df <- CheckIfInWikipediaAndWordNet(name)
 
 wordNetDictionaryForPortal.df <- GetWordNetDictionaryForPortal(portalName)
 wordNetDictionaryForCategory.df <- GetWordNetDictionaryForCategory(categoryName)
@@ -380,12 +382,72 @@ These functions use the packages
 [gtrendsR](https://cran.r-project.org/web/packages/gtrendsR/index.html) and
 [trendyy](https://cran.r-project.org/web/packages/trendyy/trendyy.pdf)
 ```r
-categories
-countries
+
+pageName <- "Mammal"
+portalName <- "Mammals"
+categoryName <- "Mammals"
+
 cities
 regions
 topics
 ```
+
+##### Categories
+```r
+CheckIfRelatedPagesInGoogleTrendsCategories(pageName)
+CheckIfArticlesMembersOfPortalInGoogleTrendsCategories(portalName)
+CheckIfArticlesMembersOfCategoryInGoogleTrendsCategories(categoryName)
+
+# Categories
+googleTrendsCategoriesInArticle.df <- GetGoogleTrendsCategoriesInArticle(pageName)
+googleTrendsCategoriesInBodyArticle.df <- GetGoogleTrendsCategoriesInBodyArticle(pageName)
+googleTrendsCategoriesInIntroduction.df <- GetGoogleTrendsCategoriesInIntroduction(pageName)
+googleTrendsCategoriesInPortal.df <- GetGoogleTrendsCategoriesInPortal(pageName)
+googleTrendsCategoriesInCategory.df <- GetGoogleTrendsCategoriesInCategory(pageName)
+
+articleAnnotatedWithGoogleTrendsCategories <- AnnotateArticleWithGoogleTrendsCategories(pageName)
+bodyArticleAnnotatedWithGoogleTrendsCategories <- AnnotateBodyArticleWithGoogleTrendsCategories(pageName)
+introductionAnnotatedWithGoogleTrendsCategories <- AnnotateIntroductionWithGoogleTrendsCategories(pageName)
+categoryAnnotatedWithGoogleTrendsCategories <- AnnotateArticleWithGoogleTrendsCategories(categoryName)
+portalAnnotatedWithGoogleTrendsCategories <- AnnotateArticleWithGoogleTrendsCategories(portalName)
+
+articlesHomonymsOfGoogleTrendsCategories.df <- GetArticlesHomonymsOfGoogleTrendsCategories()
+bodyArticlesHomonymsOfGoogleTrendsCategories.df <- GetBodyArticlesHomonymsOfGoogleTrendsCategories()
+introductionsHomonymsOfGoogleTrendsCategories.df <- GetIntroductionsHomonymsOfGoogleTrendsCategories()
+portalsHomonymsOfGoogleTrendsCategories.df <- GetPortalsHomonymsOfGoogleTrendsCategories()
+categoriesHomonymsOfGoogleTrendsCategories.df <- GetCategoriesHomonymsOfGoogleTrendsCategories()
+
+
+googleTrendsCategoriesInWikipedia <- CheckGoogleTrendsCategoriesInWikipedia()
+
+semanticRelatednessWithGoogleTrendsCategories <- MeasureSemanticRelatedenessWithGoogleTrendsCategories(pageName)
+
+googleTrendsAndWikipediaCategories <- GetWikipediaCategoriesFromGoogleTrendsCategories()
+
+wikipediaArticlesOfGoogleTrendsCategories <- GetArticlesOfGoogleTrendsCategories()
+
+measuresOfGoogleTrendsCategoriesInWikipedia <- MeasureGoogleTrendsCategoriesInWikipedia()
+
+
+```
+
+##### Countries
+```r
+countriesInArticle.df <- GetCountriesInArticle(pageName)
+countriesInBodyArticle.df <- GetCountriesInBodyArticle(pageName)
+countriesInIntroduction.df <- GetCountriesInIntroduction(pageName)
+countriesInPortal.df <- GetCountriesInPortal(pageName)
+countriesInCategory.df <- GetCountriesInCategory(pageName)
+
+articlesHomonymsOfGoogleCountries.df <- GetArticlesHomonymsOfGoogleCountries()
+bodyArticlesHomonymsOfGoogleCountries.df <- GetBodyArticlesHomonymsOfGoogleCountries()
+introductionsHomonymsOfGoogleCountries.df <- GetIntroductionsHomonymsOfGoogleCountries()
+portalsHomonymsOfGoogleCountries.df <- GetPortalsHomonymsOfGoogleCountries()
+categoriesHomonymsOfGoogleCountries.df <- GetCategoriesHomonymsOfGoogleCountries()
+```
+
+
+
 
 #### Microsoft Academics
 These functions use the package
