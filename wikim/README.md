@@ -413,6 +413,27 @@ PrintWordCloudOfCategory(categoryName)
 PrintWordCloudOfPortal(portalName)
 
 ```
+#### Ontologies
+These functions use the packages
+[ontologyIndex](https://cran.r-project.org/web/packages/ontologyIndex/index.html),
+[ontologyPlot](https://cran.r-project.org/web/packages/ontologyPlot/index.html),
+[ontologySimilarity](https://cran.r-project.org/web/packages/ontologySimilarity/index.html).
+```r
+pageName <- "Mammal"
+categoryName <- "Mammals"
+portalName <- "Mammals"
+
+ontologyFromArticle <- BuildOntologyFromPortal(portalName)
+ontologyFromPortal <- BuildOntologyFromPortal(portalName)
+ontologyFromCategory <- BuildOntologyFromCategory(categoryName)
+
+PlotOntologyFromArticle(pageName)
+PlotOntologyFromPortal(portalName)
+PlotOntologyFromCategory(categoryName)
+
+ontologySimilarity <- MeasureSimilarityBetweenOntologies(ontologyFromPortal,ontologyFromCategory)
+
+```
 
 #### Bayesian networks
 These functions use the packages
