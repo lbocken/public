@@ -460,6 +460,14 @@ evolutionOfArticle <- MeasureEvolutionOfArticle(pageName)
 pageName <- "Mammal"
 ```
 
+### Text classification
+These functions use the package
+[fastTextR](https://cran.r-project.org/web/packages/fastTextR/index.html)
+```r
+categoryName <- "Mammals"
+portalName <- "Mammals"
+
+```
 
 # Abridged functions and comparisons
 ```r
