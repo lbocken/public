@@ -66,7 +66,7 @@ install_github("lbocken/public/wikim")
 library(wikim)
 ```
 
-### Parameters of functions (input)
+### Names of portals, categories, articles as parameters of functions
 ```r
 name <- "apongabrauabnapie"
 name <- "Mammal"
