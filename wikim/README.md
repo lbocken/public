@@ -139,25 +139,36 @@ wikipediaPortalName <- function(string){paste0("Portal:",string)}
 
 ### A focus on sciences and academic fields to categorize the world
 ```r
+# English Wikipedia
 academicFields <- GetAcademicFields()
+portalsAboutAcademicFields.df <- GetPortalsAboutAcademicFields()
+categoriesAboutAcademicFields.df <- GetCategoriesAboutAcademicFields()
+articlesAboutAcademicFields.df <- GetArticlesAboutAcademicFields()
+bodyArticlesAboutAcademicFields.df <- GetArticlesAboutAcademicFields()
+introductionAboutAcademicFields.df <- GetArticlesAboutAcademicFields()
+
+# Simple English Wikipedia
+portalsAboutAcademicFieldsInSimpleWikipedia.df <- GetPortalsAboutAcademicFieldsInSimpleWikipedia()
+categoriesAboutAcademicFieldsInSimpleWikipedia.df <- GetCategoriesAboutAcademicFieldsInSimpleWikipedia()
+articlesAboutAcademicFieldsInSimpleWikipedia.df <- GetArticlesAboutAcademicFieldsInSimpleWikipedia()
+bodyArticlesAboutAcademicFieldsInSimpleWikipedia.df <- GetArticlesAboutAcademicFieldsInSimpleWikipedia()
+introductionAboutAcademicFieldsInSimpleWikipedia.df <- GetArticlesAboutAcademicFieldsInSimpleWikipedia()
+
+portalsAndRedirectsToPortalsOfAcademicFields.df <- GetPortalsAndRedirectsToPortalsOfAcademicFields()
+
+featuredArticlesAboutAcademicFields.df <- GetFeaturedArticlesAboutAcademicFields()
+goodArticlesAboutAcademicFields.df <- GetGoodArticlesAboutAcademicFields()
+
+academicFieldsAsPortalAndCategory.df <- GetAcademicFieldsAsPortalAndCategory()
 GetSectionsOfGoodAndFeaturedArticlePageWithStatusOfAcademicFieldPortalAndCategory()
 GetSectionsOfGoodAndFeaturedArticlePageWithStatusOfAcademicField()
-GetPortalsAndRedirectsToPortalsOfAcademicFields()
-GetFeaturedArticlesAboutAcademicFields()
-GetAcademicFieldsAsPortalAndCategory()
-GetGoodArticlesAboutAcademicFields()
-GetCategoriesAboutAcademicFields()
-GetPortalsAboutAcademicFields()
-academicFieldsAsPortalAndCategory.df <- GetAcademicFieldsAsPortalAndCategory()
-GetPortalsAndRedirectsToPortalsOfAcademicFields()
 ```
 
 ### Preferred corpus : categories of articles
 Several categories can be used to study chunks of Wikipedia : 
 [featured articles](https://en.wikipedia.org/wiki/Wikipedia:Featured_articles),
 [good articles](https://en.wikipedia.org/wiki/Wikipedia:Good_articles),
-[articles needing rewrite](https://en.wikipedia.org/wiki/Category:Wikipedia_articles_needing_rewrite)
-.
+[articles needing rewrite](https://en.wikipedia.org/wiki/Category:Wikipedia_articles_needing_rewrite).
 
 
 #### Featured articles
@@ -173,27 +184,30 @@ featuredCandidatesFromCategory.df <- GetFeaturedCandidatesFromPortal(categoryNam
 featuredCandidatesFromArticle.df <- GetFeaturedCandidatesFromArticle(pageName)
 
 
-GetFeaturedArticlesOfGoogleTrendsCategories()
-GetFeaturedArticlesOfGoogleTrendsCountries()
+featuredArticlesOfGoogleTrendsCategories.df <- GetFeaturedArticlesOfGoogleTrendsCategories()
+featuredArticlesOfGoogleTrendsCountries.df <- GetFeaturedArticlesOfGoogleTrendsCountries()
 
 portalNamesOnFeaturedArticles <- ExtractPortalNameOnFeaturedArticle(pageName)
-GetFeaturedArticlesWithStatusOfPortalAndCategory()
-GetNamesOfFeaturedArticlesWithStatusOfPortalName()
-GetNamesOfFeaturedArticlesWithStatusOfPortalAndCategory()
+featuredArticlesWithStatusOfPortalAndCategory.df <- GetFeaturedArticlesWithStatusOfPortalAndCategory()
+namesOfFeaturedArticlesWithStatusOfPortalName.df <- GetNamesOfFeaturedArticlesWithStatusOfPortalName()
+namesOfFeaturedArticlesWithStatusOfPortalAndCategory.df <- GetNamesOfFeaturedArticlesWithStatusOfPortalAndCategory()
+
 GetSectionsOfGoodAndFeaturedArticlePageWithStatusOfPortalAndCategory()
 GetSectionsOfGoodAndFeaturedArticlePageWithStatusOfAcademicFieldPortalAndCategory()
 
-GetFeaturedArticles(pageName)
-ExtractRawFeaturedArticles()
-SampleFeaturedArticlesAbout(number)
-GetFeaturedCandidatesFromPortal(portalName)
-GetFeaturedCandidatesFromArticle(articleName)
-GetFeaturedCandidatesFromCategory(categoryName)
+featuredArticles.df <- GetFeaturedArticles(pageName)
+rawFeaturedArticles.df <- ExtractRawFeaturedArticles()
+sampleOfFeaturedArticles <- SampleFeaturedArticlesAbout(number)
+featuredArticlesInPortal.df <- GetFeaturedCandidatesFromPortal(portalName)
+featuredArticlesInArticle.df <- GetFeaturedCandidatesFromArticle(articleName)
+featuredArticlesInCategory.df <- GetFeaturedCandidatesFromCategory(categoryName)
+
 ExtractSectionsOfFeaturedArticles()
-ExtractPortalNameOnFeaturedArticle(pageName)
 ExtractSubSectionsOfFeaturedArticles()
 ExtractSubSubSectionsOfFeaturedArticles()
-GetNamesOfFeaturedArticlesWithStatusOfPortal()
+
+ExtractPortalNameOnFeaturedArticle(pageName)
+featuredArticlesWithStatusOfPortal.df <- GetNamesOfFeaturedArticlesWithStatusOfPortal()
 
 ```
 #### Good articles
