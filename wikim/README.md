@@ -291,13 +291,22 @@ View(portalsMembersOfSimpleCategory.df)
 
 #### Articles (Values : dataframes with 4 attributes (subdomain,pageName,textType,text)
 ```r
-articles.df <- GetArticleFromPageName(pageName)
-introductions.df <- GetIntroductionFromPageName(pageName)
-bodyArticles.df <- GetBodyArticleFromPageName(pageName)
+article <- GetArticleFromPageName(pageName)
+introduction <- GetIntroductionFromPageName(pageName)
+bodyArticle <- GetBodyArticleFromPageName(pageName)
 
-simpleArticles.df <- GetSimpleArticleFromPageName(pageName)
-simpleIntroductions.df <- GetSimpleIntroductionFromPageName(pageName)
-simpleBodyArticles.df <- GetSimpleBodyArticleFromPageName(pageName)
+simpleArticle <- GetSimpleArticleFromPageName(pageName)
+simpleIntroduction <- GetSimpleIntroductionFromPageName(pageName)
+simpleBodyArticle <- GetSimpleBodyArticleFromPageName(pageName)
+
+# Lists of PageNames
+articles.df <- GetArticlesFromListOfPageNames(listOfPageNames)
+introductions.df <- GetIntroductionsFromListOfPageNames(listOfPageNames)
+bodyArticles.df <- GetBodyArticlesFromListOfPageNames(listOfPageNames)
+
+simpleArticles.df <- GetSimpleArticlesFromListOfPageNames(listOfPageNames)
+simpleIntroductions.df <- GetSimpleIntroductionsFromListOfPageNames(listOfPageNames)
+simpleBodyArticles.df <- GetSimpleBodyArticlesFromListOfPageNames(listOfPageNames)
 
 
 articlesMembersOfPortalAndCategory.df <- GetArticlesMembersOfPortalAndCategory(portalName, categoryName)
@@ -620,6 +629,9 @@ These functions use the packages
 sentimentAnalysisOfArticle1.df <- MeasureSentimentAnalysisOfArticle(pageName1)
 sentimentAnalysisOfArticle2.df <- MeasureSentimentAnalysisOfArticle(pageName2)
 
+SentimentAnalysisOfCategory.df <- MeasureSentimentAnalysisOfCategory(categoryName)
+
+
 ```
 
 
@@ -766,16 +778,15 @@ These functions use the package
 
 ## Visualization
 
-#### Histograms
+### Histograms
 ```r
 pageName <- "Mammal"
 PrintHistogramOfTheMostFrequentTokens(pageName)
 PrintHistogramOfTheMostFrequentNounPhrases(pageName)
 PrintHistogramOfTheMostFrequentWikipediaReferences(pageName)
-
 ```
 
-#### Word clouds
+### Word clouds
 These functions use the packages
 [wordcloud](https://cran.r-project.org/web/packages/wordcloud/index.html),
 [wordcloud2](https://cran.r-project.org/web/packages/wordcloud/index.html),
@@ -793,11 +804,15 @@ PrintWordCloudOfArticle(pageName)
 PrintWordCloudOfBodyArticle(pageName)
 PrintWordCloudOfCategory(categoryName)
 PrintWordCloudOfPortal(portalName)
-
-
-
 ```
-#### Ontologies
+### Dendrograms
+```r
+PrintDendrogramsOfRelatedArtiles(pageName)
+PrintDendrogramsOfCategory(categoryName)
+PrintDendrogramsOfPortals(portalName)
+```
+
+## Ontologies
 These functions use the packages
 [ontologyIndex](https://cran.r-project.org/web/packages/ontologyIndex/index.html),
 [ontologyPlot](https://cran.r-project.org/web/packages/ontologyPlot/index.html),
@@ -896,4 +911,4 @@ vob(pageName1) < vob(pageName2)
 ```
 
 
-
+### Shiny applications
