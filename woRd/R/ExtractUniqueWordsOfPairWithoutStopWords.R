@@ -6,12 +6,13 @@
 #'@examples
 # text1 <- "Dogs love cats."
 # text2 <- "Cats hate dogs."
-#'number <- ExtractUniqueWordsOfPair(text1, text2)
+#'number <- ExtractUniqueWordsOfPairWithoutStopWords(text1, text2)
 
-ExtractUniqueWordsOfPair <- function(text1, text2){
+ExtractUniqueWordsOfPairWithoutStopWords <- function(text1, text2){
   text <- paste(text1, text2, " ")
   words <- ExtractUniqueWordsOfText(cleanText)
-  return(words)
+  uniqueWordsWithoutStopwordsOfPair <- RemoveStopWords(words)
+  return(uniqueWordsWithoutStopwordsOfPair)
 }
 
 

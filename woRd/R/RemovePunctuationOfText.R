@@ -21,5 +21,7 @@ RemovePunctuationOfText <- function(text){
   cleanText <- gsub("\\)", " ", cleanText)
   cleanText <- gsub("\\[", " ", cleanText)
   cleanText <- gsub("\\]", " ", cleanText)
+  cleanText <- gsub("\\+", " ", cleanText)
+
   return(cleanText)
 }
