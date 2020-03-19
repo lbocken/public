@@ -11,6 +11,9 @@ RemoveStopWords <- function(words){
   url <- "http://xpo6.com/wp-content/uploads/2015/01/stop-word-list.txt"
   stopwords <- getURL(url)
   stopwords <- unlist(strsplit(stopwords, "\r\n"))
-  textWithoutStopwords <- setdiff(words, stopwords)
-  return(textWithoutStopwords)
+  # wordsWithoutStopWords <- setdiff(words, stopwords)
+
+  wordsWithoutStopWords <- words[! words %in% stopwords]
+
+  return(wordsWithoutStopWords)
 }
