@@ -7,9 +7,8 @@
 #'number <- CountUniqueWordsOfText(text)
 
 CountUniqueWordsOfText <- function(text){
-  cleanText <- RemovePunctuationOfText(text)
-  words <- strsplit(cleanText, " ")
-  number <- length(unlist(unique(words)))
+  uniqueWords <- ExtractUniqueWordsOfText(text)
+  number <- length(uniqueWords)
   return(number)
 }
 

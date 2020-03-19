@@ -8,8 +8,10 @@
 
 ExtractUniqueWordsOfText <- function(text){
   cleanText <- RemovePunctuationOfText(text)
-  words <- strsplit(cleanText, " ")
-  uniqueWords <- unique(words)
+  cleanText <- RemoveNumbersOfText(cleanText)
+  words <- unlist(strsplit(cleanText, " "))
+  words <- tolower(words)
+  uniqueWords <- sort(unique(words))
   return(uniqueWords)
 }
 

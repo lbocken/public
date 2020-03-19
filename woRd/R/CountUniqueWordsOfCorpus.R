@@ -11,7 +11,7 @@
 
 CountUniqueWordsOfCorpus <- function(corpus){
   text <- paste(corpus, collapse = " ")
-  cleanText <- RemovePunctuationOfText(text)
-  number <- CountUniqueWordsOfText(cleanText)
+  uniqueWords <- ExtractUniqueWordsOfText(text)
+  number <- length(uniqueWords)
   return(number)
 }

@@ -10,8 +10,8 @@
 
 CountUniqueWordsOfPair <- function(text1, text2){
   text <- paste(text1, text2, " ")
-  cleanText <- RemovePunctuationOfText(text)
-  number <- CountUniqueWordsOfText(cleanText)
+  uniqueWords <- ExtractUniqueWordsOfText(text)
+  number <- length(uniqueWords)
   return(number)
 }
 
