@@ -1,28 +1,32 @@
----
-title: "Untitled"
-output: html_document
----
+# letteR : An R package to study letters (work in progress, thanks for your patience)
+## About
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+An R package, created by [Ludovic BOCKEN](https://www.linkedin.com/in/ludovicbocken/). Supported by 
+a [doctoral scholarship](https://www.uquebec.ca/reseau/fr/medias/actualites-du-reseau/bourse-de-doctorat-pour-ludovic-bocken) from [Fonds de recherche du Québec – Société et culture (FRQSC)](http://www.frqsc.gouv.qc.ca/en/) in a PhD program of [Cognitive Computing](https://en.wikipedia.org/wiki/Cognitive_computing) of [UQAM](https://uqam.ca/) - [TELUQ](https://www.teluq.ca/site/en/) and a PhD program of [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing) of [UFC](http://www.univ-fcomte.fr/).
+Several researches in [Computational linguistics](https://en.wikipedia.org/wiki/Computational_linguistics) are conducted with this package.
+
+
+## Keywords
+
+morphology ; letters ; R 
+
+## Coding Style
+Variable names are lowercase.
+Function names begin with verbs and uppercase.
+Compound variable names and compound function names are CamelCase.
+
+## A quick start with a few examples
+
+### How to Install
+
+The latest development version (not on CRAN, not yet :) !)
+
+``` r
+install.packages("glue")
+library("glue")
+install.packages("devtools", repos="http://cloud.r-project.org")
+library(devtools)
+install_github("lbocken/public/letteR")
+library(woRd)
+
 ```
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=TRUE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
