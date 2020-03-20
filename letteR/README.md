@@ -1,4 +1,4 @@
-# letteR : An R package to study letters (work in progress, thanks for your patience)
+# letteR : An R package to study letters and morphology (work in progress, thanks for your patience)
 ## About
 
 An R package, created by [Ludovic BOCKEN](https://www.linkedin.com/in/ludovicbocken/). Supported by 
