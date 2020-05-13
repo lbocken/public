@@ -1,0 +1,10 @@
+# URL <- 'https://en.wikipedia.org/wiki/Dog'
+# text <- RemoveLettersOfTextFromURL(URL)
+
+RemoveLettersOfTextFromURL <- function(URL){
+  text <- ExtractTextFromURL(URL)
+  text <- tolower(text)
+  pattern <- paste0(letters, collapse = "|")
+  text <- gsub(pattern, "", text)
+  return(text)
+}
