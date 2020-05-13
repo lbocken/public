@@ -1,7 +1,7 @@
 text <- 'This article is about the domestic dog. For related species known as "dogs", see Canidae. For other uses, see Dog (disambiguation).'
-triples.df <- ExtractFrequencyTriplesOfWordStemsFromText(text)
+triples.df <- ExtractTriplesOfWordStemsFrequencyFromText(text)
 
-ExtractFrequencyTriplesOfWordStemsFromText <- function(text){
+ExtractTriplesOfWordStemsFrequencyFromText <- function(text){
   text <- tolower(text)
   wordStems <- sort(unlist(ExtractWordStemsFromText(text)))
   frequency.df <- as.data.frame(table(wordStems))
